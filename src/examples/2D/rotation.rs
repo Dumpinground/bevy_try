@@ -137,7 +137,30 @@ fn snap_to_player_system(
 
     for mut enemy_transform in &mut query {
         let to_player = (player_translation - enemy_transform.translation.xy()).normalize();
+        let rotate_to_player = Quat::from_rotation_arc(Vec3::Y, to_player.extend(0.));
+        enemy_transform.rotation = rotate_to_player;
     }
 }
 
-fn rotate_to_player_system() {}
+fn rotate_to_player_system(
+    mut query: Query<(&RotateToPlayer, &mut Transform), Without<Player>>,
+    player_query: Query<&Transform, With<Player>>,
+) {
+    let player_transform = player_query.single();
+    let player_translation = player_transform.translation.xy();
+
+    for (config, mut enemy_transform) in &mut query {
+        let enemy_forward = (enemy_transform.rotation * Vec3::Y).xy();
+        let to_player = (player_translation - enemy_transform.translation.xy()).normalize();
+        let forward_dot_player = enemy_forward.dot(to_player);
+        if (forward_dot_player - 1.0).abs() < f32::EPSILON {
+            continue;
+        }
+        let enemy_right = (enemy_transform.rotation * Vec3::X).xy();
+        let right_dot_player = enemy_right.dot(to_player);
+        let rotation_sign = -f32::copysign(1.0, right_dot_player);
+        let max_angle = forward_dot_player.clamp(-1.0, 1.0).acos();
+        let rotation_angle = rotation_sign * (config.rotation_speed * TIME_STEP).min(max_angle);
+        enemy_transform.rotate_z(rotation_angle);
+    }
+}
