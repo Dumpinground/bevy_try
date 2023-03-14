@@ -12,7 +12,7 @@ opt-level = 1
 opt-level = 3
 
 [dependencies]
-bevy = { version = "0.9.1", features = ["dynamic"] }
+bevy = { version = "0.10.0", features = ["dynamic_linking"] }
 
 [[example]]
 name = "hello_examples"
@@ -40,4 +40,3 @@ name = "2D Shapes"
 description = "Renders a rectangle, circle, and hexagon"
 category = "2D Rendering"
 wasm = true
-
