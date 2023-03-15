@@ -23,7 +23,7 @@ hidden = true
 
 [[example]]
 name = "rotation"
-path = "src/examples/2d/rotation.rs"
+path = "src/examples/2D/rotation.rs"
 
 [package.metadata.example.rotation]
 name = "2D Rotation"
@@ -33,7 +33,7 @@ wasm = true
 
 [[example]]
 name = "2d_shapes"
-path = "src/examples/2d/2d_shapes.rs"
+path = "src/examples/2D/2d_shapes.rs"
 
 [package.metadata.example.2d_shapes]
 name = "2D Shapes"
