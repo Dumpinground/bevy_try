@@ -1,4 +1,7 @@
-use bevy::prelude::*;
+use bevy::{
+    prelude::*,
+    text::{BreakLineOn, Text2dBounds},
+};
 
 fn main() {
     App::new()
@@ -60,15 +63,34 @@ fn setup(mut commands: Commands, asset_server: Res<AssetServer>) {
     let box_size = Vec2::new(300.0, 200.0);
     let box_position = Vec2::new(0.0, -250.0);
 
-    commands.spawn(SpriteBundle {
-        sprite: Sprite {
-            color: Color::rgb(0.25, 0.25, 0.75),
-            custom_size: Some(Vec2::new(box_size.x, box_size.y)),
+    commands
+        .spawn(SpriteBundle {
+            sprite: Sprite {
+                color: Color::rgb(0.25, 0.25, 0.75),
+                custom_size: Some(Vec2::new(box_size.x, box_size.y)),
+                ..default()
+            },
+            transform: Transform::from_translation(box_position.extend(0.0)),
             ..default()
-        },
-        transform: Transform::from_translation(box_position.extend(0.0)),
-        ..default()
-    });
+        })
+        .with_children(|builder| {
+            builder.spawn(Text2dBundle {
+                text: Text {
+                    sections: vec![TextSection::new(
+                        "this text wraps in the box\n",
+                        slightly_smaller_text_style.clone(),
+                    )],
+                    alignment: TextAlignment::Left,
+                    linebreak_behaviour: BreakLineOn::WordBoundary,
+                },
+                text_2d_bounds: Text2dBounds { size: box_size },
+                transform: Transform::from_translation(Vec3::Z),
+                ..default()
+            });
+        });
+
+    let other_box_size = Vec2::new(300.0, 200.0);
+    let other_box_position = Vec2::new(320.0, -250.0);
 }
 
 fn animate_translation() {}

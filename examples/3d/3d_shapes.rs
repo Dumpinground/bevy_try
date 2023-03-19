@@ -1,6 +1,6 @@
-use std::f32::consts::PI;
 use bevy::prelude::*;
 use bevy::render::render_resource::{Extent3d, TextureDimension, TextureFormat};
+use std::f32::consts::PI;
 
 fn main() {
     App::new()
@@ -88,7 +88,7 @@ fn rotate(mut query: Query<&mut Transform, With<Shape>>, time: Res<Time>) {
 fn uv_debug_texture() -> Image {
     const TEXTURE_SIZE: usize = 8;
 
-    let mut palette: [u8;32] = [
+    let mut palette: [u8; 32] = [
         255, 102, 159, 255, 255, 159, 102, 255, 236, 255, 102, 255, 121, 255, 102, 255, 102, 255,
         198, 255, 102, 198, 255, 255, 121, 102, 255, 255, 236, 102, 255, 255,
     ];
@@ -100,11 +100,14 @@ fn uv_debug_texture() -> Image {
         palette.rotate_right(4);
     }
 
-    Image::new_fill(Extent3d {
-        width: TEXTURE_SIZE as u32,
-        height: TEXTURE_SIZE as u32,
-        depth_or_array_layers: 1,
-    }, TextureDimension::D2,
-    &texture_data, TextureFormat::Rgba8UnormSrgb,
+    Image::new_fill(
+        Extent3d {
+            width: TEXTURE_SIZE as u32,
+            height: TEXTURE_SIZE as u32,
+            depth_or_array_layers: 1,
+        },
+        TextureDimension::D2,
+        &texture_data,
+        TextureFormat::Rgba8UnormSrgb,
     )
 }
