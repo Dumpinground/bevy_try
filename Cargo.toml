@@ -14,13 +14,6 @@ opt-level = 3
 [dependencies]
 bevy = { version = "0.10.0", features = ["dynamic_linking"] }
 
-[[example]]
-name = "hello_examples"
-path = "src/examples/hello_examples.rs"
-
-[[package.metadata.example.hello_examples]]
-hidden = true
-
 # 2D Rendering
 [[example]]
 name = "bloom_2d"
