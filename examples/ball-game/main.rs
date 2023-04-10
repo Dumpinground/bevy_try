@@ -6,6 +6,7 @@ pub const PLAYER_SIZE: f32 = 64.0;
 pub const PLAYER_SPEED: f32 = 500.0;
 pub const NUMBER_OF_ENEMIES: usize = 4;
 pub const ENEMY_SPEED: f32 = 200.0;
+pub const ENEMY_SIZE: f32 = 64.0;
 
 fn main() {
     App::new()
@@ -139,11 +140,30 @@ pub fn confine_player_movement(
     }
 }
 
-pub fn enemy_movement(
-    mut enemy_query: Query<&mut Transform, &Enemy>,
-    time: Res<Time>
-) {
+pub fn enemy_movement(mut enemy_query: Query<&mut Transform, &Enemy>, time: Res<Time>) {
     for (mut transform, enemy) in enemy_query.iter_mut() {
-        let direction = Vec3::new(enemy)
+        let direction = Vec3::new(enemy.direction.x, enemy.direction.y, 0.0);
+        transform.translation += direction * ENEMY_SPEED * time.delta_seconds();
+    }
+}
+
+pub fn update_enemy_direction(
+    mut enemy_query: Query<&Transform, &mut Enemy>,
+    window_query: Query<&Window, With<PrimaryWindow>>,
+    audio: Res<Audio>,
+    asset_server: Res<AssetServer>,
+) {
+    let window = window_query.get_single().unwrap();
+
+    let half_enemy_size = ENEMY_SIZE / 2.0;
+    let x_min = 0.0 + half_enemy_size;
+    let x_max = window.width() - half_enemy_size;
+    let y_min = 0.0 + half_enemy_size;
+    let y_max = window.height() - half_enemy_size;
+
+    for (tranform, mut enemy) in enemy_query.iter_mut() {
+        let mut direction_changed = false;
+
+        let translation = transform.translation;
     }
 }
