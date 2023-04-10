@@ -16,6 +16,8 @@ fn main() {
         .add_startup_system(spawn_enemies)
         .add_system(player_movement)
         .add_system(confine_player_movement)
+        .add_system(enemy_movement)
+        .add_system(update_enemy_direction)
         .run();
 }
 
