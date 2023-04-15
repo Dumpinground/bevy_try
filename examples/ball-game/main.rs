@@ -14,6 +14,8 @@ pub const STAR_SPAWN_TIME: f32 = 1.0;
 fn main() {
     App::new()
         .add_plugins(DefaultPlugins)
+        .init_resource::<Score>()
+        .init_resource::<StarSpawnTimer>()
         .add_startup_system(spawn_camera)
         .add_startup_system(spawn_player)
         .add_startup_system(spawn_enemies)
@@ -24,6 +26,10 @@ fn main() {
         .add_system(update_enemy_direction)
         .add_system(confine_enemy_movement)
         .add_system(enemy_hit_player)
+        .add_system(player_hit_star)
+        // .add_system(update_score)
+        // .add_system(tick_star_spawn_timer)
+        // .add_system(spawn_stars_over_time)
         .run();
 }
 
@@ -222,6 +228,27 @@ pub fn update_enemy_direction(
         let mut direction_changed = false;
 
         let translation = transform.translation;
+        if translation.x < x_min || translation.x > x_max {
+            enemy.direction.x *= -1.0;
+            direction_changed = true;
+        }
+        if translation.y < y_min || translation.y > y_max {
+            enemy.direction.y *= -1.0;
+            direction_changed = true;
+        }
+
+        if direction_changed {
+            let sound_effect_1 = asset_server.load("ball-game/audio/pluck_001.ogg");
+            let sound_effect_2 = asset_server.load("ball-game/audio/pluck_002.ogg");
+
+            let sound_effect = if random::<f32>() > 0.5 {
+                sound_effect_1
+            } else {
+                sound_effect_2
+            };
+
+            audio.play(sound_effect);
+        }
     }
 }
 
@@ -289,6 +316,50 @@ pub fn player_hit_star(
     mut score: ResMut<Score>,
 ) {
     if let Ok(player_transform) = player_query.get_single() {
-        for (star_entity, star_transform) in star_query.iter() {}
+        for (star_entity, star_transform) in star_query.iter() {
+            let distance = player_transform
+                .translation
+                .distance(star_transform.translation);
+
+            if distance < PLAYER_SIZE / 2.0 + STAR_SIZE / 2.0 {
+                println!("Player hit star!");
+                score.value += 1;
+                let sound_effect = asset_server.load("ball-game/audio/laserLarge_000.ogg");
+                audio.play(sound_effect);
+                commands.entity(star_entity).despawn();
+            }
+        }
+    }
+}
+
+pub fn update_score(score: Res<Score>) {
+    if score.is_changed() {
+        println!("Score: {}", score.value.to_string());
+    }
+}
+
+pub fn tick_star_spawn_timer(mut star_spawn_timer: ResMut<StarSpawnTimer>, time: Res<Time>) {
+    star_spawn_timer.timer.tick(time.delta());
+}
+
+pub fn spawn_stars_over_time(
+    mut commands: Commands,
+    window_query: Query<&Window, With<PrimaryWindow>>,
+    asset_server: Res<AssetServer>,
+    star_spawn_timer: Res<StarSpawnTimer>,
+) {
+    if star_spawn_timer.timer.finished() {
+        let window = window_query.get_single().unwrap();
+        let random_x = random::<f32>() * window.width();
+        let random_y = random::<f32>() * window.height();
+
+        commands.spawn((
+            SpriteBundle {
+                transform: Transform::from_xyz(random_x, random_y, 0.0),
+                texture: asset_server.load("ball-game/sprites/star.png"),
+                ..default()
+            },
+            Star {},
+        ));
     }
 }
