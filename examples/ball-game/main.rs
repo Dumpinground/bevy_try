@@ -27,9 +27,9 @@ fn main() {
         .add_system(confine_enemy_movement)
         .add_system(enemy_hit_player)
         .add_system(player_hit_star)
-        // .add_system(update_score)
-        // .add_system(tick_star_spawn_timer)
-        // .add_system(spawn_stars_over_time)
+        .add_system(update_score)
+        .add_system(tick_star_spawn_timer)
+        .add_system(spawn_stars_over_time)
         .run();
 }
 
