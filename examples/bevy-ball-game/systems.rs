@@ -1,3 +1,4 @@
+use bevy::window::PrimaryWindow;
 use bevy::{app::AppExit, prelude::*};
 
 use crate::events::GameOver;

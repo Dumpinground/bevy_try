@@ -1,4 +1,5 @@
 use bevy::prelude::*;
+use bevy::window::PrimaryWindow;
 
 use super::components::Player;
 
@@ -53,7 +54,7 @@ pub fn player_movement(
 
 pub fn confine_player_movement(
     mut player_query: Query<&mut Transform, With<Player>>,
-    window_query: Query<&Window, With<PrimaryWindow>>
+    window_query: Query<&Window, With<PrimaryWindow>>,
 ) {
     if let Ok(mut player_transform) = player_query.get_single_mut() {
         let window = window_query.get_single().unwrap();
@@ -66,8 +67,6 @@ pub fn confine_player_movement(
 
         let mut translation = player_transform.translation;
 
-        if translation.x < x_min {
-            
-        }
+        if translation.x < x_min {}
     }
 }
