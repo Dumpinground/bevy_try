@@ -1,6 +1,13 @@
 use bevy::prelude::*;
 use bevy::window::PrimaryWindow;
 
+use crate::enemy::components::Enemy;
+use crate::enemy::ENEMY_SIZE;
+use crate::events::GameOver;
+use crate::score::resources::Score;
+use crate::star::components::Star;
+use crate::star::STAR_SIZE;
+
 use super::components::Player;
 
 pub const PLAYER_SPEED: f32 = 500.0;
@@ -67,6 +74,70 @@ pub fn confine_player_movement(
 
         let mut translation = player_transform.translation;
 
-        if translation.x < x_min {}
+        if translation.x < x_min {
+            translation.x = x_min;
+        } else if translation.x > x_max {
+            translation.x = x_max;
+        }
+
+        if translation.y < y_min {
+            translation.y = y_min;
+        } else if translation.y > y_max {
+            translation.y = y_max;
+        }
+
+        player_transform.translation = translation;
+    }
+}
+
+pub fn enemy_hit_player(
+    mut commands: Commands,
+    mut game_over_event_writer: EventWriter<GameOver>,
+    mut player_query: Query<(Entity, &Transform), With<Player>>,
+    enemy_query: Query<&Transform, With<Enemy>>,
+    asset_server: Res<AssetServer>,
+    audio: Res<Audio>,
+    score: Res<Score>,
+) {
+    if let Ok((player_entity, player_transform)) = player_query.get_single_mut() {
+        for enemy_transform in enemy_query.iter() {
+            let distance = player_transform
+                .translation
+                .distance(enemy_transform.translation);
+            let player_radius = PLAYER_SIZE / 2.0;
+            let enemy_radius = ENEMY_SIZE / 2.0;
+            if distance = player_radius + enemy_radius {
+                println!("Enemy hit player! Game Over!");
+                let sound_effect = asset_server.load("ball-game/audio/explosionCrunch_000.ogg");
+                audio.play(sound_effect);
+                commands.entity(player_entity).despawn();
+                game_over_event_writer.send(GameOver { score: score.value });
+            }
+        }
+    }
+}
+
+pub fn player_hit_star(
+    mut commands: Commands,
+    player_query: Query<&Transform, With<Player>>,
+    star_query: Query<(Entity, &Transform), With<Star>>,
+    asset_server: Res<AssetServer>,
+    audio: Res<Audio>,
+    mut score: ResMut<Score>,
+) {
+    if let Ok(player_transform) = player_query.get_single() {
+        for (star_entity, star_transform) in star_query.iter() {
+            let distance = player_transform
+                .translation
+                .distance(star_transform.translation);
+
+            if distance < PLAYER_SIZE / 2.0 + STAR_SIZE / 2.0 {
+                println!("Player hit star!");
+                score.value += 1;
+                let sound_effect = asset_server.load("ball-game/audio/laserLarge_000.ogg");
+                audio.play(sound_effect);
+                commands.entity(star_entity).despawn();
+            }
+        }
     }
 }
