@@ -1,5 +1,6 @@
 use bevy::prelude::*;
 use bevy::window::PrimaryWindow;
+use std::ops::Deref;
 
 use crate::enemy::components::Enemy;
 use crate::enemy::ENEMY_SIZE;
@@ -106,12 +107,14 @@ pub fn enemy_hit_player(
                 .distance(enemy_transform.translation);
             let player_radius = PLAYER_SIZE / 2.0;
             let enemy_radius = ENEMY_SIZE / 2.0;
-            if distance = player_radius + enemy_radius {
+            if distance < player_radius + enemy_radius {
                 println!("Enemy hit player! Game Over!");
                 let sound_effect = asset_server.load("ball-game/audio/explosionCrunch_000.ogg");
                 audio.play(sound_effect);
                 commands.entity(player_entity).despawn();
-                game_over_event_writer.send(GameOver { score: score.value });
+                game_over_event_writer.send(GameOver {
+                    score: score.deref().value,
+                });
             }
         }
     }

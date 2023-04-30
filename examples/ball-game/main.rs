@@ -2,6 +2,7 @@ use bevy::app::AppExit;
 use bevy::prelude::*;
 use bevy::window::PrimaryWindow;
 use rand::random;
+use std::ops::Deref;
 
 pub const PLAYER_SIZE: f32 = 64.0;
 pub const PLAYER_SPEED: f32 = 500.0;
@@ -55,26 +56,14 @@ pub struct Enemy {
 #[derive(Component)]
 pub struct Star;
 
-#[derive(Resource)]
+#[derive(Resource, Default)]
 pub struct Score {
     pub value: u32,
 }
 
-impl Default for Score {
-    fn default() -> Score {
-        Score { value: 0 }
-    }
-}
-
-#[derive(Resource, Debug)]
+#[derive(Resource, Debug, Default)]
 pub struct HighScores {
     pub scores: Vec<(String, u32)>,
-}
-
-impl Default for HighScores {
-    fn default() -> HighScores {
-        HighScores { scores: Vec::new() }
-    }
 }
 
 #[derive(Resource)]
@@ -83,8 +72,8 @@ pub struct StarSpawnTimer {
 }
 
 impl Default for StarSpawnTimer {
-    fn default() -> StarSpawnTimer {
-        StarSpawnTimer {
+    fn default() -> Self {
+        Self {
             timer: Timer::from_seconds(STAR_SPAWN_TIME, TimerMode::Repeating),
         }
     }
@@ -96,8 +85,8 @@ pub struct EnemySpawnTimer {
 }
 
 impl Default for EnemySpawnTimer {
-    fn default() -> EnemySpawnTimer {
-        EnemySpawnTimer {
+    fn default() -> Self {
+        Self {
             timer: Timer::from_seconds(ENEMY_SPAWN_TIME, TimerMode::Repeating),
         }
     }
@@ -324,10 +313,12 @@ pub fn confine_enemy_movement(
 
 pub fn enemy_hit_player(
     mut commands: Commands,
+    mut game_over_event_writer: EventWriter<GameOver>,
     mut player_query: Query<(Entity, &Transform), With<Player>>,
     enemy_query: Query<&Transform, With<Enemy>>,
     asset_server: Res<AssetServer>,
     audio: Res<Audio>,
+    score: Res<Score>,
 ) {
     if let Ok((player_entity, player_transform)) = player_query.get_single_mut() {
         for enemy_transform in enemy_query.iter() {
@@ -341,6 +332,7 @@ pub fn enemy_hit_player(
                 let sound_effect = asset_server.load("ball-game/audio/explosionCrunch_000.ogg");
                 audio.play(sound_effect);
                 commands.entity(player_entity).despawn();
+                game_over_event_writer.send(GameOver { score: score.value })
             }
         }
     }
