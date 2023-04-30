@@ -46,8 +46,8 @@ pub fn update_enemy_direction(
     let half_enemy_size = ENEMY_SIZE / 2.0;
     let x_min = 0.0 + half_enemy_size;
     let x_max = window.width() - half_enemy_size;
-    let y_min = 0.0 + ENEMY_SIZE / 2.0;
-    let y_max = window.height() + half_enemy_size;
+    let y_min = 0.0 + half_enemy_size;
+    let y_max = window.height() - half_enemy_size;
 
     for (transform, mut enemy) in enemy_query.iter_mut() {
         let translation = transform.translation;
@@ -69,7 +69,7 @@ pub fn confine_enemy_movement(
     let half_enemy_size = ENEMY_SIZE / 2.0;
     let x_min = 0.0 + half_enemy_size;
     let x_max = window.width() - half_enemy_size;
-    let y_min = 0.0 + ENEMY_SIZE / 2.0;
+    let y_min = 0.0 + half_enemy_size;
     let y_max = window.height() + half_enemy_size;
 
     for mut transform in enemy_query.iter_mut() {
