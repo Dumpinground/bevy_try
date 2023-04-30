@@ -5,6 +5,10 @@ mod systems;
 
 use systems::*;
 
+pub struct MovementSystemSet;
+
+pub struct ConfinementSystem;
+
 pub struct PlayerPlugin;
 
 impl Plugin for PlayerPlugin {
