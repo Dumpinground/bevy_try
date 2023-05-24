@@ -1,8 +1,12 @@
 use bevy::prelude::*;
+use std::path::Path;
 
 pub const NORMAL_BUTTON_COLOR: Color = Color::rgb(0.15, 0.15, 0.15);
 pub const HOVERED_BUTTON_COLOR: Color = Color::rgb(0.25, 0.25, 0.25);
 pub const PRESSED_BUTTON_COLOR: Color = Color::rgb(0.35, 0.75, 0.35);
+
+// pub const FONT_PATH: &str = "ball-game/fonts/FiraSans-Bold.ttf";
+pub const FONT_PATH: &str = "ball-game/fonts/JOKERMAN.TTF";
 
 pub const MAIN_MENU_STYLE: Style = Style {
     flex_direction: FlexDirection::Column,
@@ -36,7 +40,7 @@ pub const BUTTON_STYLE: Style = Style {
 
 pub fn get_title_text_style(assert_server: &Res<AssetServer>) -> TextStyle {
     TextStyle {
-        font: assert_server.load("ball-game/fonts/FiraSans-Bold.ttf"),
+        font: assert_server.load(FONT_PATH),
         font_size: 64.0,
         color: Color::WHITE,
     }
@@ -44,7 +48,7 @@ pub fn get_title_text_style(assert_server: &Res<AssetServer>) -> TextStyle {
 
 pub fn get_button_text_style(assert_server: &Res<AssetServer>) -> TextStyle {
     TextStyle {
-        font: assert_server.load("ball-game/fonts/FiraSans-Bold.ttf"),
+        font: assert_server.load(FONT_PATH),
         font_size: 32.0,
         color: Color::WHITE,
     }
