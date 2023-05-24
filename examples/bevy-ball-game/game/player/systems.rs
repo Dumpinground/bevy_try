@@ -1,13 +1,12 @@
 use bevy::prelude::*;
 use bevy::window::PrimaryWindow;
-use std::ops::Deref;
 
-use crate::enemy::components::Enemy;
-use crate::enemy::ENEMY_SIZE;
+use super::super::enemy::components::Enemy;
+use super::super::enemy::ENEMY_SIZE;
+use super::super::score::resources::Score;
+use super::super::star::components::Star;
+use super::super::star::STAR_SIZE;
 use crate::events::GameOver;
-use crate::score::resources::Score;
-use crate::star::components::Star;
-use crate::star::STAR_SIZE;
 
 use super::components::Player;
 
@@ -29,6 +28,12 @@ pub fn spawn_player(
         },
         Player {},
     ));
+}
+
+pub fn despawn_player(mut commands: Commands, player_query: Query<Entity, With<Player>>) {
+    if let Ok(player_entity) = player_query.get_single() {
+        commands.entity(player_entity).despawn()
+    }
 }
 
 pub fn player_movement(
@@ -112,9 +117,7 @@ pub fn enemy_hit_player(
                 let sound_effect = asset_server.load("ball-game/audio/explosionCrunch_000.ogg");
                 audio.play(sound_effect);
                 commands.entity(player_entity).despawn();
-                game_over_event_writer.send(GameOver {
-                    score: score.deref().value,
-                });
+                game_over_event_writer.send(GameOver { score: score.value });
             }
         }
     }
