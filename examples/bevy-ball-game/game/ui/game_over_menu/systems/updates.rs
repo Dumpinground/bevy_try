@@ -1,6 +1,7 @@
 use bevy::prelude::*;
 
 use crate::events::GameOver;
+use super::super::components::FinalScoreText;
 
 pub fn update_final_score_text(
     mut game_over_event_reader: EventReader<GameOver>,
