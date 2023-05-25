@@ -3,6 +3,7 @@ mod player;
 pub mod score;
 pub mod star;
 mod systems;
+mod ui;
 
 use crate::{events::GameOver, AppState};
 use bevy::prelude::*;
