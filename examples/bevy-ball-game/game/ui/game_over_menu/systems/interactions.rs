@@ -35,7 +35,7 @@ pub fn interact_with_main_menu_button(
         match *interaction {
             Interaction::Clicked => {
                 *color = PRESSED_BUTTON.into();
-                app_state_next_state.set(AppState::MainMenu)；
+                app_state_next_state.set(AppState::MainMenu);
             }
             Interaction::Hovered => {
                 *color = HOVERED_BUTTON.into();
