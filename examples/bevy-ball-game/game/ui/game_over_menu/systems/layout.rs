@@ -1,5 +1,3 @@
-use std::panic::get_backtrace_style;
-
 use bevy::prelude::*;
 
 use super::super::components::*;
@@ -23,7 +21,7 @@ pub fn build_game_over_menu(commands: &mut Commands, asset_server: &Res<AssetSer
             parent
                 .spawn(NodeBundle {
                     style: GAME_OVER_MENU_CONTAINER_STYLE,
-                    background_color: BACKGROUND_COLOR,
+                    background_color: BACKGROUND_COLOR.into(),
                     ..default()
                 })
                 .with_children(|parent| {
