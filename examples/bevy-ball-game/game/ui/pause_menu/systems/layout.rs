@@ -4,6 +4,7 @@ use super::super::{components::*, styles::*};
 
 pub fn spawn_pause_menu(mut commands: Commands, asset_server: Res<AssetServer>) {
     println!("Spawning Pause Menu");
+    build_pause_menu(&mut commands, &asset_server);
 }
 
 pub fn despawn_pause_menu(

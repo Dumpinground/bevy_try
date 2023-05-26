@@ -4,13 +4,14 @@ mod pause_menu;
 
 use bevy::prelude::*;
 
-use self::{hud::HudPlugin, game_over_menu::GameOverMenuPlugin};
+use self::{game_over_menu::GameOverMenuPlugin, hud::HudPlugin, pause_menu::PauseMenuPlugin};
 
 pub struct GameUiPlugin;
 
 impl Plugin for GameUiPlugin {
     fn build(&self, app: &mut App) {
         app.add_plugin(HudPlugin)
-        .add_plugin(GameOverMenuPlugin);
+            .add_plugin(PauseMenuPlugin)
+            .add_plugin(GameOverMenuPlugin);
     }
 }
