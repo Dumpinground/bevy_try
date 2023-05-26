@@ -14,6 +14,8 @@ use star::StarPlugin;
 
 use systems::{pause_simulation, resume_simulation, toggle_simulation};
 
+use self::ui::GameUiPlugin;
+
 pub struct GamePlugin;
 
 impl Plugin for GamePlugin {
@@ -28,6 +30,7 @@ impl Plugin for GamePlugin {
             .add_plugin(EnemyPlugin)
             .add_plugin(ScorePlugin)
             .add_plugin(StarPlugin)
+            .add_plugin(GameUiPlugin)
             .add_system(toggle_simulation.run_if(in_state(AppState::Game)))
             .add_system(resume_simulation.in_schedule(OnExit(AppState::Game)));
     }
