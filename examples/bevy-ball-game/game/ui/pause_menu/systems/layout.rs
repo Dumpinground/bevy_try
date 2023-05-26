@@ -72,13 +72,14 @@ pub fn build_pause_menu(commands: &mut Commands, asset_server: &Res<AssetServer>
                         });
                     // Main Menu Button
                     parent
-                        .spawn(
-                            (ButtonBundle {
+                        .spawn((
+                            ButtonBundle {
                                 style: BUTTON_STYLE,
                                 background_color: BACKGROUND_COLOR.into(),
                                 ..default()
-                            }),
-                        )
+                            },
+                            MainMenuButton {},
+                        ))
                         .with_children(|parent| {
                             parent.spawn(TextBundle {
                                 style: Style::DEFAULT,
@@ -95,13 +96,14 @@ pub fn build_pause_menu(commands: &mut Commands, asset_server: &Res<AssetServer>
                         });
                     // Quit Button
                     parent
-                        .spawn(
-                            (ButtonBundle {
+                        .spawn((
+                            ButtonBundle {
                                 style: BUTTON_STYLE,
                                 background_color: BACKGROUND_COLOR.into(),
                                 ..default()
-                            }),
-                        )
+                            },
+                            QuitButton {},
+                        ))
                         .with_children(|parent| {
                             parent.spawn(TextBundle {
                                 style: Style::DEFAULT,

@@ -26,6 +26,6 @@ impl Plugin for PauseMenuPlugin {
                 )
                     .in_set(OnUpdate(SimulationState::Paused)),
             )
-            .add_system(despawn_pause_menu.in_schedule(OnExit(SimulationState::Paused)))
+            .add_system(despawn_pause_menu.in_schedule(OnExit(SimulationState::Paused)));
     }
 }

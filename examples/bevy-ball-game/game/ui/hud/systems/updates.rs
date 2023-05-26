@@ -1,6 +1,6 @@
 use bevy::prelude::*;
 
-use crate::game::{score::resources::Score, enemy::components::Enemy};
+use crate::game::{enemy::components::Enemy, score::resources::Score};
 
 use super::super::components::{EnemyText, ScoreText};
 
@@ -13,7 +13,7 @@ pub fn update_score_text(mut text_query: Query<&mut Text, With<ScoreText>>, scor
 }
 
 pub fn update_enemy_text(
-    mut text_query: Query<&mut Text, With<ScoreText>>,
+    mut text_query: Query<&mut Text, With<EnemyText>>,
     enemy_query: Query<Entity, With<Enemy>>,
 ) {
     let count = enemy_query.iter().count();
