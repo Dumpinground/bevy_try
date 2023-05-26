@@ -1,4 +1,4 @@
-use bevy::{a11y::accesskit::TextAlign, prelude::*};
+use bevy::prelude::*;
 
 pub const BACKGROUND_COLOR: Color = Color::rgba(0.25, 0.25, 0.25, 0.5);
 
@@ -32,7 +32,7 @@ pub const BUTTON_STYLE: Style = Style {
     ..Style::DEFAULT
 };
 
-pub const FONT_PATH: &str = "ball/game/fonts/JOKERMAN.TTF";
+pub const FONT_PATH: &str = "ball-game/fonts/JOKERMAN.TTF";
 
 pub fn get_title_text_style(asset_server: &Res<AssetServer>) -> TextStyle {
     TextStyle {
