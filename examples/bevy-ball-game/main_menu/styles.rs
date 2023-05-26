@@ -1,27 +1,11 @@
 use bevy::prelude::*;
+use crate::fonts::FontSets;
 
 pub const NORMAL_BUTTON_COLOR: Color = Color::rgb(0.15, 0.15, 0.15);
 pub const HOVERED_BUTTON_COLOR: Color = Color::rgb(0.25, 0.25, 0.25);
 pub const PRESSED_BUTTON_COLOR: Color = Color::rgb(0.35, 0.75, 0.35);
 
 // pub const FONT_PATH: &str = "ball-game/fonts/FiraSans-Bold.ttf";
-pub const FONT_PATH: &str = "ball-game/fonts/JOKERMAN.TTF";
-
-pub struct FontSets;
-
-impl FontSets {
-    fn jokerman() -> &'static str {
-        "ball-game/fonts/JOKERMAN.TTF"
-    }
-
-    fn edwardian() -> &'static str {
-        "ball-game/fonts/ITCEDSCR.TTF"
-    }
-
-    fn curlz() -> &'static str {
-        "ball-game/fonts/CURLZ___.TTF"
-    }
-}
 
 pub const MAIN_MENU_STYLE: Style = Style {
     flex_direction: FlexDirection::Column,

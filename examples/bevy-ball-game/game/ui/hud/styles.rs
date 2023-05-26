@@ -1,5 +1,7 @@
 use bevy::prelude::*;
 
+use crate::fonts::FontSets;
+
 pub const BACKGROUND_COLOR: Color = Color::rgba(0.25, 0.25, 0.25, 0.5);
 
 pub const HUD_STYLE: Style = Style {
@@ -38,5 +40,5 @@ pub const IMAGE_STYLE: Style = Style {
 };
 
 pub fn get_text_style(asset_server: &Res<AssetServer>) -> TextStyle {
-    TextStyle { font: asset_server.load("ball-game/fonts/JOKERMAN.TTF"), font_size: 64.0, color: Color::rgb(1.0, 1.0, 1.0), }
+    TextStyle { font: asset_server.load(FontSets::jokerman()), font_size: 64.0, color: Color::rgb(1.0, 1.0, 1.0), }
 }

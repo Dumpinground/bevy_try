@@ -1,3 +1,5 @@
+mod fonts;
+
 pub mod events;
 mod systems;
 
