@@ -24,7 +24,7 @@ impl Plugin for GamePlugin {
             // Event
             .add_event::<GameOver>()
             .add_state::<SimulationState>()
-            .add_system(pause_simulation.in_schedule(OnEnter(AppState::Game)))
+            .add_system(resume_simulation.in_schedule(OnEnter(AppState::Game)))
             // System
             .add_plugin(PlayerPlugin)
             .add_plugin(EnemyPlugin)
@@ -32,7 +32,7 @@ impl Plugin for GamePlugin {
             .add_plugin(StarPlugin)
             .add_plugin(GameUiPlugin)
             .add_system(toggle_simulation.run_if(in_state(AppState::Game)))
-            .add_system(resume_simulation.in_schedule(OnExit(AppState::Game)));
+            .add_system(pause_simulation.in_schedule(OnExit(AppState::Game)));
     }
 }
 
