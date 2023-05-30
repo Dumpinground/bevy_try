@@ -16,10 +16,11 @@ fn setup(
 ) {
     // plane
     commands.spawn(PbrBundle {
-        mesh: meshes.add(shape::Plane::from_size(5.0).into()),
+        mesh: meshes.add(shape::Plane::from_size(7.0).into()),
         material: materials.add(Color::rgb(0.3, 0.5, 0.3).into()),
         ..default()
     });
+
     // cubes
     commands.spawn(PbrBundle {
         mesh: meshes.add(Mesh::from(shape::Cube { size: 1.0 })),
@@ -33,6 +34,25 @@ fn setup(
         transform: Transform::from_xyz(2.0, 0.5, 0.0),
         ..default()
     });
+    commands.spawn(PbrBundle {
+        mesh: meshes.add(Mesh::from(shape::Cube { size: 1.0 })),
+        material: materials.add(Color::rgb(0.8, 0.7, 0.6).into()),
+        transform: Transform::from_xyz(-2.0, 0.5, 0.0),
+        ..default()
+    });
+    commands.spawn(PbrBundle {
+        mesh: meshes.add(Mesh::from(shape::Cube { size: 1.0 })),
+        material: materials.add(Color::rgb(0.8, 0.7, 0.6).into()),
+        transform: Transform::from_xyz(0.0, 0.5, 2.0),
+        ..default()
+    });
+    commands.spawn(PbrBundle {
+        mesh: meshes.add(Mesh::from(shape::Cube { size: 1.0 })),
+        material: materials.add(Color::rgb(0.8, 0.7, 0.6).into()),
+        transform: Transform::from_xyz(0.0, 0.5, -2.0),
+        ..default()
+    });
+
     // light
     commands.spawn(PointLightBundle {
         point_light: PointLight {
@@ -72,8 +92,8 @@ impl Default for CameraController {
             key_up: KeyCode::Up,
             key_down: KeyCode::Down,
 
-            walk_speed: 10.0,
-            run_speed: 30.0,
+            walk_speed: 3.0,
+            run_speed: 5.0,
         }
     }
 }
@@ -112,29 +132,33 @@ fn camera_controller(
 
 fn key_event(
     keyboard_input: Res<Input<KeyCode>>,
-    mut camera_query: Query<&mut Transform, With<CameraController>>,
+    mut camera_query: Query<(&mut Transform, &mut CameraController)>,
     time: Res<Time>,
 ) {
-    if let Ok(mut transform) = camera_query.get_single_mut() {
+    if let Ok((mut transform, camera)) = camera_query.get_single_mut() {
         let mut direction = Vec3::ZERO;
 
-        if keyboard_input.pressed(KeyCode::Left) || keyboard_input.pressed(KeyCode::A) {
-            println!("move to the left.");
+        if keyboard_input.pressed(KeyCode::Q) {
+            direction += Vec3::new(0.0, 1.0, 0.0);
+        }
+
+        if keyboard_input.pressed(KeyCode::A) {
+            direction += Vec3::new(0.0, -1.0, 0.0);
+        }
+
+        if keyboard_input.pressed(KeyCode::S) {
             direction += Vec3::new(-1.0, 0.0, 0.0);
         }
 
-        if keyboard_input.pressed(KeyCode::Right) || keyboard_input.pressed(KeyCode::D) {
-            println!("move to the right.");
+        if keyboard_input.pressed(KeyCode::E) {
             direction += Vec3::new(1.0, 0.0, 0.0);
         }
 
-        if keyboard_input.pressed(KeyCode::Up) || keyboard_input.pressed(KeyCode::W) {
-            println!("move to the head.");
+        if keyboard_input.pressed(KeyCode::W) {
             direction += Vec3::new(0.0, 0.0, -1.0);
         }
 
-        if keyboard_input.pressed(KeyCode::Down) || keyboard_input.pressed(KeyCode::S) {
-            println!("move to the back.");
+        if keyboard_input.pressed(KeyCode::D) {
             direction += Vec3::new(0.0, 0.0, 1.0);
         }
 
@@ -142,6 +166,6 @@ fn key_event(
             direction = direction.normalize();
         }
 
-        transform.translation += direction * 3.0 * time.delta_seconds();
+        transform.translation += direction * camera.walk_speed * time.delta_seconds();
     }
 }
