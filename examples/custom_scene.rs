@@ -110,8 +110,38 @@ fn camera_controller(
     }
 }
 
-fn key_event(keyboard_input: Res<Input<KeyCode>>) {
-    if keyboard_input.pressed(KeyCode::Left) || keyboard_input.pressed(KeyCode::A) {
-        println!("direction to the left.");
+fn key_event(
+    keyboard_input: Res<Input<KeyCode>>,
+    mut camera_query: Query<&mut Transform, With<CameraController>>,
+    time: Res<Time>,
+) {
+    if let Ok(mut transform) = camera_query.get_single_mut() {
+        let mut direction = Vec3::ZERO;
+
+        if keyboard_input.pressed(KeyCode::Left) || keyboard_input.pressed(KeyCode::A) {
+            println!("move to the left.");
+            direction += Vec3::new(-1.0, 0.0, 0.0);
+        }
+
+        if keyboard_input.pressed(KeyCode::Right) || keyboard_input.pressed(KeyCode::D) {
+            println!("move to the right.");
+            direction += Vec3::new(1.0, 0.0, 0.0);
+        }
+
+        if keyboard_input.pressed(KeyCode::Up) || keyboard_input.pressed(KeyCode::W) {
+            println!("move to the head.");
+            direction += Vec3::new(0.0, 0.0, -1.0);
+        }
+
+        if keyboard_input.pressed(KeyCode::Down) || keyboard_input.pressed(KeyCode::S) {
+            println!("move to the back.");
+            direction += Vec3::new(0.0, 0.0, 1.0);
+        }
+
+        if direction.length() > 0.0 {
+            direction = direction.normalize();
+        }
+
+        transform.translation += direction * 3.0 * time.delta_seconds();
     }
 }
