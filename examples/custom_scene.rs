@@ -4,6 +4,8 @@ fn main() {
     App::new()
         .add_plugins(DefaultPlugins)
         .add_startup_system(setup)
+        // .add_system(camera_controller)
+        .add_system(key_event)
         .run();
 }
 
@@ -105,5 +107,11 @@ fn camera_controller(
         };
 
         if mouse_delta != Vec2::ZERO {}
+    }
+}
+
+fn key_event(keyboard_input: Res<Input<KeyCode>>) {
+    if keyboard_input.pressed(KeyCode::Left) || keyboard_input.pressed(KeyCode::A) {
+        println!("direction to the left.");
     }
 }
