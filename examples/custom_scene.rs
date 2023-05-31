@@ -6,6 +6,7 @@ fn main() {
         .add_startup_system(setup)
         // .add_system(camera_controller)
         .add_system(key_event)
+        .add_system(light_moving)
         .run();
 }
 
@@ -54,15 +55,18 @@ fn setup(
     });
 
     // light
-    commands.spawn(PointLightBundle {
-        point_light: PointLight {
-            intensity: 1500.0,
-            shadows_enabled: true,
+    commands.spawn((
+        PointLightBundle {
+            point_light: PointLight {
+                intensity: 1500.0,
+                shadows_enabled: true,
+                ..default()
+            },
+            transform: Transform::from_xyz(4.0, 8.0, 4.0),
             ..default()
         },
-        transform: Transform::from_xyz(4.0, 8.0, 4.0),
-        ..default()
-    });
+        Light::default(),
+    ));
     // camera
     commands.spawn((
         Camera3dBundle {
@@ -71,6 +75,17 @@ fn setup(
         },
         CameraController::default(),
     ));
+}
+
+#[derive(Component)]
+struct Light {
+    pub speed: f32,
+}
+
+impl Default for Light {
+    fn default() -> Self {
+        Self { speed: 2.0 }
+    }
 }
 
 #[derive(Component)]
@@ -95,6 +110,20 @@ impl Default for CameraController {
             walk_speed: 3.0,
             run_speed: 5.0,
         }
+    }
+}
+
+fn light_moving(time: Res<Time>, mut light_query: Query<(&mut Transform, &mut Light)>) {
+    if let Ok((mut transform, mut light)) = light_query.get_single_mut() {
+        let position = transform.translation;
+        let mut direction = Vec3::ZERO;
+        if position.x < -10.0 || position.x > 10.0 {
+            light.speed = -light.speed;
+        }
+
+        direction += Vec3::new(1.0, 0.0, 0.0) * light.speed;
+
+        transform.translation += direction * time.delta_seconds();
     }
 }
 
@@ -169,3 +198,4 @@ fn key_event(
         transform.translation += direction * camera.walk_speed * time.delta_seconds();
     }
 }
+
