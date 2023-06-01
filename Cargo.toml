@@ -14,6 +14,17 @@ opt-level = 3
 [dependencies]
 bevy = { version = "0.10", features = ["dynamic_linking"] }
 rand = "0.8.5"
+bevy_rapier2d = { version = "*", features = ["simd-stable", "debug-render-2d"] }
+bevy_rapier3d = { version = "*", features = ["simd-stable", "debug-render-3d"] }
+
+# My Example
+[[example]]
+name = "rapier2d"
+path = "examples/2d/rapier2d.rs"
+
+[[example]]
+name = "rapier3d"
+path = "examples/3d/rapier3d.rs"
 
 # 2D Rendering
 [[example]]
