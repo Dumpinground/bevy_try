@@ -198,4 +198,3 @@ fn key_event(
         transform.translation += direction * camera.walk_speed * time.delta_seconds();
     }
 }
-

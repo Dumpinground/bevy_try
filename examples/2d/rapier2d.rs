@@ -24,7 +24,15 @@ fn setup_physics(mut commands: Commands) {
         .spawn(RigidBody::Dynamic)
         .insert(Collider::ball(50.0))
         .insert(Restitution::coefficient(0.7))
+        .insert(ColliderMassProperties::Density(1.0))
         .insert(TransformBundle::from(Transform::from_xyz(0.0, 400.0, 0.0)));
+
+    commands
+        .spawn(RigidBody::Dynamic)
+        .insert(Collider::ball(10.0))
+        .insert(Restitution::coefficient(0.1))
+        .insert(ColliderMassProperties::Density(0.001))
+        .insert(TransformBundle::from(Transform::from_xyz(0.0, 600.0, 0.0)));
 }
 
 fn print_ball_altitude(positions: Query<&Transform, With<RigidBody>>) {
