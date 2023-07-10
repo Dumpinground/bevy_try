@@ -13,7 +13,8 @@ pub const GAME_OVER_MENU_STYLE: Style = Style {
     display: Display::Flex,
     justify_content: JustifyContent::Center,
     align_items: AlignItems::Center,
-    size: Size::new(Val::Percent(100.0), Val::Percent(100.0)),
+    width: Val::Percent(100.),
+    height: Val::Percent(100.),
     ..Style::DEFAULT
 };
 
@@ -22,13 +23,16 @@ pub const GAME_OVER_MENU_CONTAINER_STYLE: Style = Style {
     flex_direction: FlexDirection::Column,
     justify_content: JustifyContent::Center,
     align_items: AlignItems::Center,
-    size: Size::new(Val::Px(400.0), Val::Px(400.0)),
-    gap: Size::new(Val::Px(8.0), Val::Px(8.0)),
+    width: Val::Px(400.),
+    height: Val::Px(400.),
+    row_gap: Val::Px(8.),
+    column_gap: Val::Px(8.),
     ..Style::DEFAULT
 };
 
 pub const BUTTON_STYLE: Style = Style {
-    size: Size::new(Val::Px(200.0), Val::Px(200.0)),
+    width: Val::Px(200.),
+    height: Val::Px(200.),
     justify_content: JustifyContent::Center,
     align_items: AlignItems::Center,
     ..Style::DEFAULT
@@ -37,23 +41,23 @@ pub const BUTTON_STYLE: Style = Style {
 pub fn get_title_text_style(asset_server: &Res<AssetServer>) -> TextStyle {
     TextStyle {
         font: asset_server.load(FontSets::edwardian()),
-        font_size: 64.0,
-        color: Color::rgb(1.0, 1.0, 1.0),
+        font_size: 64.,
+        color: Color::rgb(1., 1., 1.),
     }
 }
 
 pub fn get_final_score_text_style(asset_server: &Res<AssetServer>) -> TextStyle {
     TextStyle {
         font: asset_server.load(FontSets::edwardian()),
-        font_size: 48.0,
-        color: Color::rgb(1.0, 1.0, 1.0),
+        font_size: 48.,
+        color: Color::rgb(1., 1., 1.),
     }
 }
 
 pub fn get_button_text_style(asset_server: &Res<AssetServer>) -> TextStyle {
     TextStyle {
         font: asset_server.load(FontSets::edwardian()),
-        font_size: 32.0,
-        color: Color::rgb(1.0, 1.0, 1.0),
+        font_size: 32.,
+        color: Color::rgb(1., 1., 1.),
     }
 }

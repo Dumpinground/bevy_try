@@ -24,15 +24,17 @@ impl Plugin for GamePlugin {
             // Event
             .add_event::<GameOver>()
             .add_state::<SimulationState>()
-            .add_system(resume_simulation.in_schedule(OnEnter(AppState::Game)))
+            .add_systems(OnEnter(AppState::Game), resume_simulation)
             // System
-            .add_plugin(PlayerPlugin)
-            .add_plugin(EnemyPlugin)
-            .add_plugin(ScorePlugin)
-            .add_plugin(StarPlugin)
-            .add_plugin(GameUiPlugin)
-            .add_system(toggle_simulation.run_if(in_state(AppState::Game)))
-            .add_system(pause_simulation.in_schedule(OnExit(AppState::Game)));
+            .add_plugins((
+                PlayerPlugin,
+                EnemyPlugin,
+                ScorePlugin,
+                StarPlugin,
+                GameUiPlugin,
+            ))
+            .add_systems(Update, toggle_simulation.run_if(in_state(AppState::Game)))
+            .add_systems(OnExit(AppState::Game), pause_simulation);
     }
 }
 

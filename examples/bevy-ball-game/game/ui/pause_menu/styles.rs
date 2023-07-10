@@ -13,7 +13,8 @@ pub const PAUSE_MENU_STYLE: Style = Style {
     display: Display::Flex,
     justify_content: JustifyContent::Center,
     align_items: AlignItems::Center,
-    size: Size::new(Val::Percent(100.0), Val::Percent(100.0)),
+    width: Val::Px(100.0),
+    height: Val::Px(100.0),
     ..Style::DEFAULT
 };
 
@@ -22,13 +23,16 @@ pub const PAUSE_MENU_CONTAINER_STYLE: Style = Style {
     flex_direction: FlexDirection::Column,
     justify_content: JustifyContent::Center,
     align_items: AlignItems::Center,
-    size: Size::new(Val::Px(400.0), Val::Px(400.0)),
-    gap: Size::new(Val::Px(8.0), Val::Px(8.0)),
+    width: Val::Px(400.0),
+    height: Val::Px(400.0),
+    row_gap: Val::Px(8.0),
+    column_gap: Val::Px(8.0),
     ..Style::DEFAULT
 };
 
 pub const BUTTON_STYLE: Style = Style {
-    size: Size::new(Val::Px(200.0), Val::Px(80.0)),
+    width: Val::Px(200.0),
+    height: Val::Px(80.0),
     justify_content: JustifyContent::Center,
     align_items: AlignItems::Center,
     ..Style::DEFAULT

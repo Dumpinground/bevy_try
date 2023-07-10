@@ -1,19 +1,19 @@
-use bevy::{prelude::*, app::AppExit};
+use bevy::{app::AppExit, prelude::*};
 
-use super::super::{
-    components::*,
-    styles::*
-};
+use super::super::{components::*, styles::*};
 
 use crate::AppState;
 
 pub fn interact_with_restart_button(
-    mut button_query: Query<(&Interaction, &mut BackgroundColor), (Changed<Interaction>, With<RestartButton>)>,
-    mut app_state_next_state: ResMut<NextState<AppState>>
+    mut button_query: Query<
+        (&Interaction, &mut BackgroundColor),
+        (Changed<Interaction>, With<RestartButton>),
+    >,
+    mut app_state_next_state: ResMut<NextState<AppState>>,
 ) {
     for (interaction, mut color) in button_query.iter_mut() {
         match *interaction {
-            Interaction::Clicked => {
+            Interaction::Pressed => {
                 *color = PRESSED_BUTTON.into();
                 app_state_next_state.set(AppState::Game);
             }
@@ -28,12 +28,15 @@ pub fn interact_with_restart_button(
 }
 
 pub fn interact_with_main_menu_button(
-    mut button_query: Query<(&Interaction, &mut BackgroundColor), (Changed<Interaction>, With<MainMenuButton>)>,
+    mut button_query: Query<
+        (&Interaction, &mut BackgroundColor),
+        (Changed<Interaction>, With<MainMenuButton>),
+    >,
     mut app_state_next_state: ResMut<NextState<AppState>>,
 ) {
     for (interaction, mut color) in button_query.iter_mut() {
         match *interaction {
-            Interaction::Clicked => {
+            Interaction::Pressed => {
                 *color = PRESSED_BUTTON.into();
                 app_state_next_state.set(AppState::MainMenu);
             }
@@ -49,11 +52,14 @@ pub fn interact_with_main_menu_button(
 
 pub fn interact_with_quit_button(
     mut app_exit_event_writer: EventWriter<AppExit>,
-    mut button_query: Query<(&Interaction, &mut BackgroundColor), (Changed<Interaction>, With<QuitButton>)>
+    mut button_query: Query<
+        (&Interaction, &mut BackgroundColor),
+        (Changed<Interaction>, With<QuitButton>),
+    >,
 ) {
     for (interaction, mut color) in button_query.iter_mut() {
         match *interaction {
-            Interaction::Clicked => {
+            Interaction::Pressed => {
                 *color = PRESSED_BUTTON.into();
                 app_exit_event_writer.send(AppExit);
             }

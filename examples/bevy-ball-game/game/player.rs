@@ -25,21 +25,28 @@ pub struct PlayerPlugin;
 
 impl Plugin for PlayerPlugin {
     fn build(&self, app: &mut App) {
-        app.configure_set(PlayerSystemSet::Movement.before(PlayerSystemSet::Confinement))
-            .add_system(spawn_player.in_schedule(OnEnter(AppState::Game)))
-            .add_systems(
-                (
-                    player_movement.in_set(PlayerSystemSet::Movement),
-                    confine_player_movement.in_set(PlayerSystemSet::Confinement),
-                )
-                    .in_set(OnUpdate(AppState::Game))
-                    .in_set(OnUpdate(SimulationState::Running)),
+        app.configure_set(
+            Update,
+            PlayerSystemSet::Movement.before(PlayerSystemSet::Confinement),
+        )
+        .add_systems(OnEnter(AppState::Game), spawn_player)
+        .add_systems(
+            Update,
+            (
+                player_movement.in_set(PlayerSystemSet::Movement),
+                confine_player_movement.in_set(PlayerSystemSet::Confinement),
+                enemy_hit_player,
+                player_hit_star,
             )
-            .add_systems(
-                (enemy_hit_player, player_hit_star)
-                    .in_set(OnUpdate(AppState::Game))
-                    .in_set(OnUpdate(SimulationState::Running)),
-            )
-            .add_system(despawn_player.in_schedule(OnExit(AppState::Game)));
+                .run_if(in_state(AppState::Game))
+                .run_if(in_state(SimulationState::Running)),
+        )
+        // .add_systems(
+        //     Update,
+        //     (enemy_hit_player, player_hit_star)
+        //         .run_if(in_state(AppState::Game))
+        //         .run_if(in_state(SimulationState::Running)),
+        // )
+        .add_systems(OnExit(AppState::Game), despawn_player);
     }
 }
