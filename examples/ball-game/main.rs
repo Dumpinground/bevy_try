@@ -92,6 +92,7 @@ impl Default for EnemySpawnTimer {
     }
 }
 
+#[derive(Event)]
 pub struct GameOver {
     pub score: u32,
 }
