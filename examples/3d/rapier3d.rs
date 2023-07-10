@@ -4,10 +4,10 @@ use bevy_rapier3d::prelude::*;
 fn main() {
     App::new()
         .add_plugins(DefaultPlugins)
-        .add_plugin(RapierPhysicsPlugin::<NoUserData>::default())
-        .add_plugin(RapierDebugRenderPlugin::default())
-        .add_startup_systems((setup_graphics, setup_physics))
-        .add_system(print_ball_altitude)
+        .add_plugins(RapierPhysicsPlugin::<NoUserData>::default())
+        .add_plugins(RapierDebugRenderPlugin::default())
+        .add_systems(Startup, (setup_graphics, setup_physics))
+        .add_systems(Update, print_ball_altitude)
         .run();
 }
 

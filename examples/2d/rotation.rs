@@ -1,7 +1,5 @@
-use bevy::{
-    prelude::*,
-};
 use bevy::math::Vec3Swizzles;
+use bevy::prelude::*;
 
 const TIME_STEP: f32 = 1.0 / 165.0; // 显示器刷新
 const BOUNDS: Vec2 = Vec2::new(1200.0, 640.0);
@@ -9,15 +7,16 @@ const BOUNDS: Vec2 = Vec2::new(1200.0, 640.0);
 fn main() {
     App::new()
         .add_plugins(DefaultPlugins)
-        .add_startup_system(setup)
+        .add_systems(Startup, setup)
         .add_systems(
+            Update,
             (
                 player_movement_system,
                 snap_to_player_system,
                 rotate_to_player_system,
-            )
+            ),
         )
-        .add_system(bevy::window::close_on_esc)
+        .add_systems(Update, bevy::window::close_on_esc)
         .run();
 }
 
@@ -32,7 +31,7 @@ struct SnapToPlayer;
 
 #[derive(Component)]
 struct RotateToPlayer {
-    rotation_speed: f32
+    rotation_speed: f32,
 }
 
 fn setup(mut commands: Commands, asset_server: Res<AssetServer>) {
@@ -81,8 +80,8 @@ fn setup(mut commands: Commands, asset_server: Res<AssetServer>) {
             ..default()
         },
         RotateToPlayer {
-            rotation_speed: f32::to_radians(45.0)
-        }
+            rotation_speed: f32::to_radians(45.0),
+        },
     ));
     commands.spawn((
         SpriteBundle {
@@ -91,8 +90,8 @@ fn setup(mut commands: Commands, asset_server: Res<AssetServer>) {
             ..default()
         },
         RotateToPlayer {
-            rotation_speed: f32::to_radians(90.0)
-        }
+            rotation_speed: f32::to_radians(90.0),
+        },
     ));
 }
 
