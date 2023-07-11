@@ -21,7 +21,7 @@ impl Styles {
         }
     }
 
-    fn title_style() -> Style {
+    fn title() -> Style {
         Style {
             flex_direction: FlexDirection::Row,
             justify_content: JustifyContent::Center,
@@ -32,7 +32,7 @@ impl Styles {
         }
     }
 
-    fn image_style() -> Style {
+    fn image() -> Style {
         Style {
             width: Val::Px(64.0),
             height: Val::Px(64.0),
@@ -41,7 +41,7 @@ impl Styles {
         }
     }
 
-    fn button_style() -> Style {
+    fn button() -> Style {
         Style {
             justify_content: JustifyContent::Center,
             align_items: AlignItems::Center,
