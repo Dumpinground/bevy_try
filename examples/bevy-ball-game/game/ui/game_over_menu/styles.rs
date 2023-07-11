@@ -8,35 +8,75 @@ pub const NORMAL_BUTTON: Color = Color::rgb(0.15, 0.15, 0.15);
 pub const HOVERED_BUTTON: Color = Color::rgb(0.25, 0.25, 0.25);
 pub const PRESSED_BUTTON: Color = Color::rgb(0.35, 0.75, 0.35);
 
-pub const GAME_OVER_MENU_STYLE: Style = Style {
-    position_type: PositionType::Absolute,
-    display: Display::Flex,
-    justify_content: JustifyContent::Center,
-    align_items: AlignItems::Center,
-    width: Val::Percent(100.),
-    height: Val::Percent(100.),
-    ..Style::DEFAULT
-};
+struct Styles;
 
-pub const GAME_OVER_MENU_CONTAINER_STYLE: Style = Style {
-    display: Display::Flex,
-    flex_direction: FlexDirection::Column,
-    justify_content: JustifyContent::Center,
-    align_items: AlignItems::Center,
-    width: Val::Px(400.),
-    height: Val::Px(400.),
-    row_gap: Val::Px(8.),
-    column_gap: Val::Px(8.),
-    ..Style::DEFAULT
-};
+impl Styles {
+    fn game_over_menu() -> Style {
+        Style {
+            position_type: PositionType::Absolute,
+            display: Display::Flex,
+            justify_content: JustifyContent::Center,
+            align_items: AlignItems::Center,
+            width: Val::Percent(100.),
+            height: Val::Percent(100.),
+            ..Style::DEFAULT
+        }
+    }
 
-pub const BUTTON_STYLE: Style = Style {
-    width: Val::Px(200.),
-    height: Val::Px(200.),
-    justify_content: JustifyContent::Center,
-    align_items: AlignItems::Center,
-    ..Style::DEFAULT
-};
+    fn game_over_menu_container() -> Style {
+        Style {
+            display: Display::Flex,
+            flex_direction: FlexDirection::Column,
+            justify_content: JustifyContent::Center,
+            align_items: AlignItems::Center,
+            width: Val::Px(400.),
+            height: Val::Px(400.),
+            row_gap: Val::Px(8.),
+            column_gap: Val::Px(8.),
+            ..Style::DEFAULT
+        }
+    }
+
+    fn button() -> Style {
+        Style {
+            width: Val::Px(200.),
+            height: Val::Px(200.),
+            justify_content: JustifyContent::Center,
+            align_items: AlignItems::Center,
+            ..Style::DEFAULT
+        }
+    }
+}
+
+// pub const GAME_OVER_MENU_STYLE: Style = Style {
+//     position_type: PositionType::Absolute,
+//     display: Display::Flex,
+//     justify_content: JustifyContent::Center,
+//     align_items: AlignItems::Center,
+//     width: Val::Percent(100.),
+//     height: Val::Percent(100.),
+//     ..Style::DEFAULT
+// };
+
+// pub const GAME_OVER_MENU_CONTAINER_STYLE: Style = Style {
+//     display: Display::Flex,
+//     flex_direction: FlexDirection::Column,
+//     justify_content: JustifyContent::Center,
+//     align_items: AlignItems::Center,
+//     width: Val::Px(400.),
+//     height: Val::Px(400.),
+//     row_gap: Val::Px(8.),
+//     column_gap: Val::Px(8.),
+//     ..Style::DEFAULT
+// };
+
+// pub const BUTTON_STYLE: Style = Style {
+//     width: Val::Px(200.),
+//     height: Val::Px(200.),
+//     justify_content: JustifyContent::Center,
+//     align_items: AlignItems::Center,
+//     ..Style::DEFAULT
+// };
 
 pub fn get_title_text_style(asset_server: &Res<AssetServer>) -> TextStyle {
     TextStyle {
