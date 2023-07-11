@@ -1,6 +1,8 @@
 {
     "rust-analyzer.check.extraArgs": [
         "--example",
-        "bevy-ball-game"
+        "bevy-ball-game",
+        "--example",
+        "custom_scene"
     ]
 }

@@ -3,10 +3,9 @@ use bevy::{input::mouse::MouseMotion, prelude::*};
 fn main() {
     App::new()
         .add_plugins(DefaultPlugins)
-        .add_startup_system(setup)
+        .add_systems(Startup, setup)
         // .add_system(camera_controller)
-        .add_system(key_event)
-        .add_system(light_moving)
+        .add_systems(Update, (key_event, light_moving))
         .run();
 }
 
