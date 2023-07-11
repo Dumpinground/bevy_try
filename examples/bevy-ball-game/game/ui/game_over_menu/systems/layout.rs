@@ -11,7 +11,7 @@ pub fn build_game_over_menu(commands: &mut Commands, asset_server: &Res<AssetSer
     let game_over_menu_entity = commands
         .spawn((
             NodeBundle {
-                style: GAME_OVER_MENU_STYLE,
+                style: Styles::game_over_menu(),
                 z_index: ZIndex::Local(2),
                 ..default()
             },
@@ -20,7 +20,7 @@ pub fn build_game_over_menu(commands: &mut Commands, asset_server: &Res<AssetSer
         .with_children(|parent| {
             parent
                 .spawn(NodeBundle {
-                    style: GAME_OVER_MENU_CONTAINER_STYLE,
+                    style: Styles::game_over_menu_container(),
                     background_color: BACKGROUND_COLOR.into(),
                     ..default()
                 })
@@ -56,7 +56,7 @@ pub fn build_game_over_menu(commands: &mut Commands, asset_server: &Res<AssetSer
                     parent
                         .spawn((
                             ButtonBundle {
-                                style: BUTTON_STYLE,
+                                style: Styles::button(),
                                 background_color: NORMAL_BUTTON.into(),
                                 ..default()
                             },
@@ -80,7 +80,7 @@ pub fn build_game_over_menu(commands: &mut Commands, asset_server: &Res<AssetSer
                     parent
                         .spawn((
                             ButtonBundle {
-                                style: BUTTON_STYLE,
+                                style: Styles::button(),
                                 background_color: NORMAL_BUTTON.into(),
                                 ..default()
                             },
@@ -104,7 +104,7 @@ pub fn build_game_over_menu(commands: &mut Commands, asset_server: &Res<AssetSer
                     parent
                         .spawn((
                             ButtonBundle {
-                                style: BUTTON_STYLE,
+                                style: Styles::button(),
                                 background_color: NORMAL_BUTTON.into(),
                                 ..default()
                             },

@@ -8,10 +8,10 @@ pub const NORMAL_BUTTON: Color = Color::rgb(0.15, 0.15, 0.15);
 pub const HOVERED_BUTTON: Color = Color::rgb(0.25, 0.25, 0.25);
 pub const PRESSED_BUTTON: Color = Color::rgb(0.35, 0.75, 0.35);
 
-struct Styles;
+pub struct Styles;
 
 impl Styles {
-    fn game_over_menu() -> Style {
+    pub fn game_over_menu() -> Style {
         Style {
             position_type: PositionType::Absolute,
             display: Display::Flex,
@@ -23,7 +23,7 @@ impl Styles {
         }
     }
 
-    fn game_over_menu_container() -> Style {
+    pub fn game_over_menu_container() -> Style {
         Style {
             display: Display::Flex,
             flex_direction: FlexDirection::Column,
@@ -37,7 +37,7 @@ impl Styles {
         }
     }
 
-    fn button() -> Style {
+    pub fn button() -> Style {
         Style {
             width: Val::Px(200.),
             height: Val::Px(200.),

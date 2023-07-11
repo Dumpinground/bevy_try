@@ -20,7 +20,7 @@ pub fn build_pause_menu(commands: &mut Commands, asset_server: &Res<AssetServer>
     let pause_menu_entity = commands
         .spawn((
             NodeBundle {
-                style: PAUSE_MENU_STYLE,
+                style: Styles::pause_menu(),
                 z_index: ZIndex::Local(1),
                 ..default()
             },
@@ -29,7 +29,7 @@ pub fn build_pause_menu(commands: &mut Commands, asset_server: &Res<AssetServer>
         .with_children(|parent| {
             parent
                 .spawn(NodeBundle {
-                    style: PAUSE_MENU_CONTAINER_STYLE,
+                    style: Styles::pause_menu_container(),
                     background_color: BACKGROUND_COLOR.into(),
                     ..default()
                 })
@@ -50,7 +50,7 @@ pub fn build_pause_menu(commands: &mut Commands, asset_server: &Res<AssetServer>
                     parent
                         .spawn((
                             ButtonBundle {
-                                style: BUTTON_STYLE,
+                                style: Styles::button(),
                                 background_color: NORMAL_BUTTON.into(),
                                 ..default()
                             },
@@ -74,7 +74,7 @@ pub fn build_pause_menu(commands: &mut Commands, asset_server: &Res<AssetServer>
                     parent
                         .spawn((
                             ButtonBundle {
-                                style: BUTTON_STYLE,
+                                style: Styles::button(),
                                 background_color: BACKGROUND_COLOR.into(),
                                 ..default()
                             },
@@ -98,7 +98,7 @@ pub fn build_pause_menu(commands: &mut Commands, asset_server: &Res<AssetServer>
                     parent
                         .spawn((
                             ButtonBundle {
-                                style: BUTTON_STYLE,
+                                style: Styles::button(),
                                 background_color: BACKGROUND_COLOR.into(),
                                 ..default()
                             },

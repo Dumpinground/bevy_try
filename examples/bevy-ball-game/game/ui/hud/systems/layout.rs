@@ -10,7 +10,7 @@ pub fn build_hud(commands: &mut Commands, asset_server: &Res<AssetServer>) -> En
     let hud_entity = commands
         .spawn((
             NodeBundle {
-                style: HUD_STYLE,
+                style: Styles::hud(),
                 ..default()
             },
             HUD {},
@@ -19,14 +19,14 @@ pub fn build_hud(commands: &mut Commands, asset_server: &Res<AssetServer>) -> En
             // LHS
             parent
                 .spawn(NodeBundle {
-                    style: LHS_STYLE,
+                    style: Styles::lhs(),
                     background_color: BACKGROUND_COLOR.into(),
                     ..default()
                 })
                 .with_children(|parent| {
                     // Star Image
                     parent.spawn(ImageBundle {
-                        style: IMAGE_STYLE,
+                        style: Styles::image(),
                         image: asset_server.load("ball-game/sprites/star.png").into(),
                         ..default()
                     });
@@ -49,7 +49,7 @@ pub fn build_hud(commands: &mut Commands, asset_server: &Res<AssetServer>) -> En
             // RHS
             parent
                 .spawn(NodeBundle {
-                    style: RHS_STYLE,
+                    style: Styles::rhs(),
                     background_color: BACKGROUND_COLOR.into(),
                     ..default()
                 })
@@ -72,7 +72,7 @@ pub fn build_hud(commands: &mut Commands, asset_server: &Res<AssetServer>) -> En
                     ));
                     // Enemy Image
                     parent.spawn(ImageBundle {
-                        style: IMAGE_STYLE,
+                        style: Styles::image(),
                         image: asset_server
                             .load("ball-game/sprites/ball_red_large.png")
                             .into(),

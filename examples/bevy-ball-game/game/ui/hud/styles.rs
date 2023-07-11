@@ -4,10 +4,10 @@ use crate::fonts::FontSets;
 
 pub const BACKGROUND_COLOR: Color = Color::rgba(0.25, 0.25, 0.25, 0.5);
 
-struct Styles;
+pub struct Styles;
 
 impl Styles {
-    fn hud() -> Style {
+    pub fn hud() -> Style {
         Style {
             display: Display::Flex,
             flex_direction: FlexDirection::Row,
@@ -19,7 +19,7 @@ impl Styles {
         }
     }
 
-    fn lhs() -> Style {
+    pub fn lhs() -> Style {
         Style {
             display: Display::Flex,
             flex_direction: FlexDirection::Row,
@@ -32,7 +32,7 @@ impl Styles {
         }
     }
 
-    fn rhs() -> Style {
+    pub fn rhs() -> Style {
         Style {
             display: Display::Flex,
             flex_direction: FlexDirection::Row,
@@ -45,7 +45,7 @@ impl Styles {
         }
     }
 
-    fn image() -> Style {
+    pub fn image() -> Style {
         Style {
             width: Val::Px(48.0),
             height: Val::Px(48.0),

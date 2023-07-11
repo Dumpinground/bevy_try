@@ -5,10 +5,10 @@ pub const NORMAL_BUTTON_COLOR: Color = Color::rgb(0.15, 0.15, 0.15);
 pub const HOVERED_BUTTON_COLOR: Color = Color::rgb(0.25, 0.25, 0.25);
 pub const PRESSED_BUTTON_COLOR: Color = Color::rgb(0.35, 0.75, 0.35);
 
-struct Styles;
+pub struct Styles;
 
 impl Styles {
-    fn main_menu() -> Style {
+    pub fn main_menu() -> Style {
         Style {
             flex_direction: FlexDirection::Column,
             justify_content: JustifyContent::Center,
@@ -21,7 +21,7 @@ impl Styles {
         }
     }
 
-    fn title() -> Style {
+    pub fn title() -> Style {
         Style {
             flex_direction: FlexDirection::Row,
             justify_content: JustifyContent::Center,
@@ -32,7 +32,7 @@ impl Styles {
         }
     }
 
-    fn image() -> Style {
+    pub fn image() -> Style {
         Style {
             width: Val::Px(64.0),
             height: Val::Px(64.0),
@@ -41,7 +41,7 @@ impl Styles {
         }
     }
 
-    fn button() -> Style {
+    pub fn button() -> Style {
         Style {
             justify_content: JustifyContent::Center,
             align_items: AlignItems::Center,
