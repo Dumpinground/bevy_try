@@ -39,7 +39,7 @@ pub fn build_pause_menu(commands: &mut Commands, asset_server: &Res<AssetServer>
                         text: Text {
                             sections: vec![TextSection::new(
                                 "Pause Menu",
-                                get_title_text_style(&asset_server),
+                                get_title_text_style(asset_server),
                             )],
                             alignment: TextAlignment::Center,
                             ..default()
@@ -62,7 +62,7 @@ pub fn build_pause_menu(commands: &mut Commands, asset_server: &Res<AssetServer>
                                 text: Text {
                                     sections: vec![TextSection::new(
                                         "Resume",
-                                        get_button_text_style(&asset_server),
+                                        get_button_text_style(asset_server),
                                     )],
                                     alignment: TextAlignment::Center,
                                     ..default()
@@ -86,7 +86,7 @@ pub fn build_pause_menu(commands: &mut Commands, asset_server: &Res<AssetServer>
                                 text: Text {
                                     sections: vec![TextSection::new(
                                         "Main Menu",
-                                        get_button_text_style(&asset_server),
+                                        get_button_text_style(asset_server),
                                     )],
                                     alignment: TextAlignment::Center,
                                     ..default()
@@ -110,7 +110,7 @@ pub fn build_pause_menu(commands: &mut Commands, asset_server: &Res<AssetServer>
                                 text: Text {
                                     sections: vec![TextSection::new(
                                         "Quit",
-                                        get_button_text_style(&asset_server),
+                                        get_button_text_style(asset_server),
                                     )],
                                     alignment: TextAlignment::Center,
                                     ..default()

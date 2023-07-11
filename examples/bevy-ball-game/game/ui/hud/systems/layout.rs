@@ -36,7 +36,7 @@ pub fn build_hud(commands: &mut Commands, asset_server: &Res<AssetServer>) -> En
                             text: Text {
                                 sections: vec![TextSection::new(
                                     "0",
-                                    get_text_style(&asset_server),
+                                    get_text_style(asset_server),
                                 )],
                                 alignment: TextAlignment::Center,
                                 ..default()
@@ -61,7 +61,7 @@ pub fn build_hud(commands: &mut Commands, asset_server: &Res<AssetServer>) -> En
                             text: Text {
                                 sections: vec![TextSection::new(
                                     "0",
-                                    get_text_style(&asset_server),
+                                    get_text_style(asset_server),
                                 )],
                                 alignment: TextAlignment::Center,
                                 ..default()
