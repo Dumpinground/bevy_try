@@ -13,8 +13,8 @@ impl Styles {
             flex_direction: FlexDirection::Row,
             justify_content: JustifyContent::SpaceBetween,
             align_items: AlignItems::Center,
-            width: Val::Px(100.0),
-            height: Val::Px(15.0),
+            width: Val::Percent(100.0),
+            height: Val::Percent(15.0),
             ..Style::DEFAULT
         }
     }
@@ -25,8 +25,8 @@ impl Styles {
             flex_direction: FlexDirection::Row,
             justify_content: JustifyContent::Center,
             align_items: AlignItems::Center,
-            width: Val::Px(200.0),
-            height: Val::Px(80.0),
+            width: Val::Percent(200.0),
+            height: Val::Percent(80.0),
             margin: UiRect::new(Val::Px(32.0), Val::Px(0.0), Val::Px(0.0), Val::Px(0.0)),
             ..Style::DEFAULT
         }
@@ -38,8 +38,8 @@ impl Styles {
             flex_direction: FlexDirection::Row,
             justify_content: JustifyContent::Center,
             align_items: AlignItems::Center,
-            width: Val::Px(200.0),
-            height: Val::Px(80.0),
+            width: Val::Percent(200.0),
+            height: Val::Percent(80.0),
             margin: UiRect::new(Val::Px(0.0), Val::Px(32.0), Val::Px(0.0), Val::Px(0.0)),
             ..Style::DEFAULT
         }
@@ -54,45 +54,6 @@ impl Styles {
         }
     }
 }
-
-// pub const HUD_STYLE: Style = Style {
-//     display: Display::Flex,
-//     flex_direction: FlexDirection::Row,
-//     justify_content: JustifyContent::SpaceBetween,
-//     align_items: AlignItems::Center,
-//     width: Val::Px(100.0),
-//     height: Val::Px(15.0),
-//     ..Style::DEFAULT
-// };
-
-// pub const LHS_STYLE: Style = Style {
-//     display: Display::Flex,
-//     flex_direction: FlexDirection::Row,
-//     justify_content: JustifyContent::Center,
-//     align_items: AlignItems::Center,
-//     width: Val::Px(200.0),
-//     height: Val::Px(80.0),
-//     margin: UiRect::new(Val::Px(32.0), Val::Px(0.0), Val::Px(0.0), Val::Px(0.0)),
-//     ..Style::DEFAULT
-// };
-
-// pub const RHS_STYLE: Style = Style {
-//     display: Display::Flex,
-//     flex_direction: FlexDirection::Row,
-//     justify_content: JustifyContent::Center,
-//     align_items: AlignItems::Center,
-//     width: Val::Px(200.0),
-//     height: Val::Px(80.0),
-//     margin: UiRect::new(Val::Px(0.0), Val::Px(32.0), Val::Px(0.0), Val::Px(0.0)),
-//     ..Style::DEFAULT
-// };
-
-// pub const IMAGE_STYLE: Style = Style {
-//     width: Val::Px(48.0),
-//     height: Val::Px(48.0),
-//     margin: UiRect::new(Val::Px(8.0), Val::Px(8.0), Val::Px(8.0), Val::Px(8.0)),
-//     ..Style::DEFAULT
-// };
 
 pub fn get_text_style(asset_server: &Res<AssetServer>) -> TextStyle {
     TextStyle {
