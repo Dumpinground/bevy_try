@@ -17,12 +17,12 @@ pub fn toggle_simulation(
 ) {
     if keyboard_input.just_pressed(KeyCode::Space) {
         if simulation_state.get() == &SimulationState::Running {
-            simulation_state_next_state.set(SimulationState::Paused);
+            pause_simulation(simulation_state_next_state);
             println!("Simulation Paused.");
         }
 
         if simulation_state.get() == &SimulationState::Paused {
-            simulation_state_next_state.set(SimulationState::Running);
+            resume_simulation(simulation_state_next_state);
             println!("Simulation Running.");
         }
     }
