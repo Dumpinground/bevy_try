@@ -32,12 +32,14 @@ pub fn interact_with_main_menu_button(
         (Changed<Interaction>, With<MainMenuButton>),
     >,
     mut app_state_next_state: ResMut<NextState<AppState>>,
+    mut simulation_state_next_state: ResMut<NextState<SimulationState>>,
 ) {
     for (interaction, mut color) in button_query.iter_mut() {
         match *interaction {
             Interaction::Pressed => {
                 *color = PRESSED_BUTTON.into();
                 app_state_next_state.set(AppState::MainMenu);
+                simulation_state_next_state.set(SimulationState::Running);
             }
             Interaction::Hovered => {
                 *color = HOVERED_BUTTON.into();

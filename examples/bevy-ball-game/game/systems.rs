@@ -1,15 +1,21 @@
 use bevy::prelude::*;
 
-use crate::AppState;
 use super::SimulationState;
+use crate::AppState;
 
-pub fn pause_simulation(mut simulation_state_next_state: ResMut<NextState<SimulationState>>, app_state: Res<State<AppState>>) {
+pub fn pause_simulation(
+    mut simulation_state_next_state: ResMut<NextState<SimulationState>>,
+    app_state: Res<State<AppState>>,
+) {
     if app_state.eq(&AppState::Game) {
         simulation_state_next_state.set(SimulationState::Paused);
     }
 }
 
-pub fn resume_simulation(mut simulation_state_next_state: ResMut<NextState<SimulationState>>, app_state: Res<State<AppState>>) {
+pub fn resume_simulation(
+    mut simulation_state_next_state: ResMut<NextState<SimulationState>>,
+    app_state: Res<State<AppState>>,
+) {
     if app_state.eq(&AppState::Game) {
         simulation_state_next_state.set(SimulationState::Running);
     }
@@ -18,8 +24,8 @@ pub fn resume_simulation(mut simulation_state_next_state: ResMut<NextState<Simul
 pub fn toggle_simulation(
     keyboard_input: Res<Input<KeyCode>>,
     simulation_state: Res<State<SimulationState>>,
-    mut simulation_state_next_state: ResMut<NextState<SimulationState>>,
-    app_state: Res<State<AppState>>
+    simulation_state_next_state: ResMut<NextState<SimulationState>>,
+    app_state: Res<State<AppState>>,
 ) {
     if keyboard_input.just_pressed(KeyCode::Space) {
         if simulation_state.eq(&SimulationState::Running) {
