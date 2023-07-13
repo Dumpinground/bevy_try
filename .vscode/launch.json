@@ -1,0 +1,6227 @@
+{
+    // 使用 IntelliSense 了解相关属性。 
+    // 悬停以查看现有属性的描述。
+    // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'bevy_try'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=bevy_try",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "bevy_try",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'bevy_try'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=bevy_try",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "bevy_try",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'rapier2d'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=rapier2d",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "rapier2d",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'rapier2d'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=rapier2d",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "rapier2d",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'rapier3d'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=rapier3d",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "rapier3d",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'rapier3d'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=rapier3d",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "rapier3d",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'bloom_2d'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=bloom_2d",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "bloom_2d",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'bloom_2d'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=bloom_2d",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "bloom_2d",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'move_sprite'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=move_sprite",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "move_sprite",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'move_sprite'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=move_sprite",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "move_sprite",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'rotation'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=rotation",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "rotation",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'rotation'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=rotation",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "rotation",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'mesh2d'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=mesh2d",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "mesh2d",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'mesh2d'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=mesh2d",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "mesh2d",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'mesh2d_manual'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=mesh2d_manual",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "mesh2d_manual",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'mesh2d_manual'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=mesh2d_manual",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "mesh2d_manual",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'mesh2d_vertex_color_texture'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=mesh2d_vertex_color_texture",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "mesh2d_vertex_color_texture",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'mesh2d_vertex_color_texture'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=mesh2d_vertex_color_texture",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "mesh2d_vertex_color_texture",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example '2d_shapes'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=2d_shapes",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "2d_shapes",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example '2d_shapes'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=2d_shapes",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "2d_shapes",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'sprite'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=sprite",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "sprite",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'sprite'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=sprite",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "sprite",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'sprite_flipping'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=sprite_flipping",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "sprite_flipping",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'sprite_flipping'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=sprite_flipping",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "sprite_flipping",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'sprite_sheet'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=sprite_sheet",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "sprite_sheet",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'sprite_sheet'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=sprite_sheet",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "sprite_sheet",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'text2d'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=text2d",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "text2d",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'text2d'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=text2d",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "text2d",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'texture_atlas'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=texture_atlas",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "texture_atlas",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'texture_atlas'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=texture_atlas",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "texture_atlas",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'transparency_2d'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=transparency_2d",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "transparency_2d",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'transparency_2d'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=transparency_2d",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "transparency_2d",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'pixel_perfect'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=pixel_perfect",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "pixel_perfect",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'pixel_perfect'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=pixel_perfect",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "pixel_perfect",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example '3d_scene'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=3d_scene",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "3d_scene",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example '3d_scene'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=3d_scene",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "3d_scene",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example '3d_shapes'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=3d_shapes",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "3d_shapes",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example '3d_shapes'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=3d_shapes",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "3d_shapes",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'atmospheric_fog'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=atmospheric_fog",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "atmospheric_fog",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'atmospheric_fog'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=atmospheric_fog",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "atmospheric_fog",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'fog'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=fog",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "fog",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'fog'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=fog",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "fog",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'blend_modes'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=blend_modes",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "blend_modes",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'blend_modes'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=blend_modes",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "blend_modes",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'lighting'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=lighting",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "lighting",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'lighting'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=lighting",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "lighting",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'lines'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=lines",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "lines",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'lines'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=lines",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "lines",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'spotlight'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=spotlight",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "spotlight",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'spotlight'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=spotlight",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "spotlight",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'bloom_3d'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=bloom_3d",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "bloom_3d",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'bloom_3d'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=bloom_3d",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "bloom_3d",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'load_gltf'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=load_gltf",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "load_gltf",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'load_gltf'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=load_gltf",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "load_gltf",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'tonemapping'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=tonemapping",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "tonemapping",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'tonemapping'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=tonemapping",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "tonemapping",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'fxaa'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=fxaa",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "fxaa",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'fxaa'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=fxaa",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "fxaa",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'msaa'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=msaa",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "msaa",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'msaa'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=msaa",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "msaa",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'orthographic'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=orthographic",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "orthographic",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'orthographic'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=orthographic",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "orthographic",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'parenting'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=parenting",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "parenting",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'parenting'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=parenting",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "parenting",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'pbr'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=pbr",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "pbr",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'pbr'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=pbr",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "pbr",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'render_to_texture'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=render_to_texture",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "render_to_texture",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'render_to_texture'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=render_to_texture",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "render_to_texture",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'shadow_biases'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=shadow_biases",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "shadow_biases",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'shadow_biases'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=shadow_biases",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "shadow_biases",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'shadow_caster_receiver'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=shadow_caster_receiver",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "shadow_caster_receiver",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'shadow_caster_receiver'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=shadow_caster_receiver",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "shadow_caster_receiver",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'skybox'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=skybox",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "skybox",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'skybox'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=skybox",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "skybox",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'spherical_area_lights'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=spherical_area_lights",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "spherical_area_lights",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'spherical_area_lights'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=spherical_area_lights",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "spherical_area_lights",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'split_screen'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=split_screen",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "split_screen",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'split_screen'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=split_screen",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "split_screen",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'texture'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=texture",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "texture",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'texture'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=texture",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "texture",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'transparency_3d'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=transparency_3d",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "transparency_3d",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'transparency_3d'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=transparency_3d",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "transparency_3d",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'two_passes'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=two_passes",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "two_passes",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'two_passes'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=two_passes",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "two_passes",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'update_gltf_scene'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=update_gltf_scene",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "update_gltf_scene",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'update_gltf_scene'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=update_gltf_scene",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "update_gltf_scene",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'vertex_colors'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=vertex_colors",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "vertex_colors",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'vertex_colors'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=vertex_colors",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "vertex_colors",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'wireframe'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=wireframe",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "wireframe",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'wireframe'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=wireframe",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "wireframe",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'no_prepass'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=no_prepass",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "no_prepass",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'no_prepass'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=no_prepass",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "no_prepass",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'animated_fox'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=animated_fox",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "animated_fox",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'animated_fox'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=animated_fox",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "animated_fox",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'animated_transform'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=animated_transform",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "animated_transform",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'animated_transform'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=animated_transform",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "animated_transform",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'custom_skinned_mesh'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=custom_skinned_mesh",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "custom_skinned_mesh",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'custom_skinned_mesh'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=custom_skinned_mesh",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "custom_skinned_mesh",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'gltf_skinned_mesh'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=gltf_skinned_mesh",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "gltf_skinned_mesh",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'gltf_skinned_mesh'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=gltf_skinned_mesh",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "gltf_skinned_mesh",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'custom_loop'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=custom_loop",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "custom_loop",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'custom_loop'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=custom_loop",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "custom_loop",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'drag_and_drop'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=drag_and_drop",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "drag_and_drop",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'drag_and_drop'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=drag_and_drop",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "drag_and_drop",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'empty'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=empty",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "empty",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'empty'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=empty",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "empty",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'empty_defaults'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=empty_defaults",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "empty_defaults",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'empty_defaults'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=empty_defaults",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "empty_defaults",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'headless'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=headless",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "headless",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'headless'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=headless",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "headless",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'logs'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=logs",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "logs",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'logs'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=logs",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "logs",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'plugin'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=plugin",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "plugin",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'plugin'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=plugin",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "plugin",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'plugin_group'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=plugin_group",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "plugin_group",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'plugin_group'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=plugin_group",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "plugin_group",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'return_after_run'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=return_after_run",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "return_after_run",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'return_after_run'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=return_after_run",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "return_after_run",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'thread_pool_resources'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=thread_pool_resources",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "thread_pool_resources",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'thread_pool_resources'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=thread_pool_resources",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "thread_pool_resources",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'no_renderer'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=no_renderer",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "no_renderer",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'no_renderer'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=no_renderer",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "no_renderer",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'without_winit'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=without_winit",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "without_winit",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'without_winit'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=without_winit",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "without_winit",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'asset_loading'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=asset_loading",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "asset_loading",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'asset_loading'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=asset_loading",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "asset_loading",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'custom_asset'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=custom_asset",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "custom_asset",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'custom_asset'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=custom_asset",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "custom_asset",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'custom_asset_io'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=custom_asset_io",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "custom_asset_io",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'custom_asset_io'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=custom_asset_io",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "custom_asset_io",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'hot_asset_reloading'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=hot_asset_reloading",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "hot_asset_reloading",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'hot_asset_reloading'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=hot_asset_reloading",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "hot_asset_reloading",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'async_compute'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=async_compute",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "async_compute",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'async_compute'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=async_compute",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "async_compute",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'external_source_external_thread'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=external_source_external_thread",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "external_source_external_thread",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'external_source_external_thread'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=external_source_external_thread",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "external_source_external_thread",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'audio'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=audio",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "audio",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'audio'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=audio",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "audio",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'audio_control'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=audio_control",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "audio_control",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'audio_control'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=audio_control",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "audio_control",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'decodable'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=decodable",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "decodable",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'decodable'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=decodable",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "decodable",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'spatial_audio_2d'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=spatial_audio_2d",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "spatial_audio_2d",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'spatial_audio_2d'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=spatial_audio_2d",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "spatial_audio_2d",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'spatial_audio_3d'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=spatial_audio_3d",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "spatial_audio_3d",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'spatial_audio_3d'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=spatial_audio_3d",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "spatial_audio_3d",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'log_diagnostics'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=log_diagnostics",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "log_diagnostics",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'log_diagnostics'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=log_diagnostics",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "log_diagnostics",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'custom_diagnostic'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=custom_diagnostic",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "custom_diagnostic",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'custom_diagnostic'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=custom_diagnostic",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "custom_diagnostic",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'ecs_guide'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=ecs_guide",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "ecs_guide",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'ecs_guide'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=ecs_guide",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "ecs_guide",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'apply_system_buffers'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=apply_system_buffers",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "apply_system_buffers",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'apply_system_buffers'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=apply_system_buffers",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "apply_system_buffers",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'component_change_detection'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=component_change_detection",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "component_change_detection",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'component_change_detection'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=component_change_detection",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "component_change_detection",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'custom_query_param'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=custom_query_param",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "custom_query_param",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'custom_query_param'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=custom_query_param",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "custom_query_param",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'event'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=event",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "event",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'event'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=event",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "event",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'fixed_timestep'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=fixed_timestep",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "fixed_timestep",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'fixed_timestep'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=fixed_timestep",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "fixed_timestep",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'generic_system'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=generic_system",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "generic_system",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'generic_system'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=generic_system",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "generic_system",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'hierarchy'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=hierarchy",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "hierarchy",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'hierarchy'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=hierarchy",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "hierarchy",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'iter_combinations'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=iter_combinations",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "iter_combinations",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'iter_combinations'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=iter_combinations",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "iter_combinations",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'parallel_query'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=parallel_query",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "parallel_query",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'parallel_query'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=parallel_query",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "parallel_query",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'removal_detection'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=removal_detection",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "removal_detection",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'removal_detection'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=removal_detection",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "removal_detection",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'run_conditions'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=run_conditions",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "run_conditions",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'run_conditions'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=run_conditions",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "run_conditions",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'startup_system'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=startup_system",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "startup_system",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'startup_system'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=startup_system",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "startup_system",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'state'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=state",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "state",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'state'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=state",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "state",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'system_piping'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=system_piping",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "system_piping",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'system_piping'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=system_piping",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "system_piping",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'system_closure'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=system_closure",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "system_closure",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'system_closure'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=system_closure",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "system_closure",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'system_param'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=system_param",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "system_param",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'system_param'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=system_param",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "system_param",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'timers'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=timers",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "timers",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'timers'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=timers",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "timers",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'alien_cake_addict'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=alien_cake_addict",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "alien_cake_addict",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'alien_cake_addict'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=alien_cake_addict",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "alien_cake_addict",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'breakout'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=breakout",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "breakout",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'breakout'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=breakout",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "breakout",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'contributors'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=contributors",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "contributors",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'contributors'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=contributors",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "contributors",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'game_menu'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=game_menu",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "game_menu",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'game_menu'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=game_menu",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "game_menu",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'char_input_events'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=char_input_events",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "char_input_events",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'char_input_events'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=char_input_events",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "char_input_events",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'gamepad_input'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=gamepad_input",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "gamepad_input",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'gamepad_input'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=gamepad_input",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "gamepad_input",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'gamepad_input_events'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=gamepad_input_events",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "gamepad_input_events",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'gamepad_input_events'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=gamepad_input_events",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "gamepad_input_events",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'keyboard_input'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=keyboard_input",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "keyboard_input",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'keyboard_input'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=keyboard_input",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "keyboard_input",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'keyboard_modifiers'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=keyboard_modifiers",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "keyboard_modifiers",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'keyboard_modifiers'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=keyboard_modifiers",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "keyboard_modifiers",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'keyboard_input_events'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=keyboard_input_events",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "keyboard_input_events",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'keyboard_input_events'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=keyboard_input_events",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "keyboard_input_events",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'mouse_input'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=mouse_input",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "mouse_input",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'mouse_input'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=mouse_input",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "mouse_input",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'mouse_input_events'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=mouse_input_events",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "mouse_input_events",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'mouse_input_events'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=mouse_input_events",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "mouse_input_events",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'mouse_grab'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=mouse_grab",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "mouse_grab",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'mouse_grab'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=mouse_grab",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "mouse_grab",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'touch_input'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=touch_input",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "touch_input",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'touch_input'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=touch_input",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "touch_input",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'touch_input_events'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=touch_input_events",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "touch_input_events",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'touch_input_events'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=touch_input_events",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "touch_input_events",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'text_input'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=text_input",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "text_input",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'text_input'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=text_input",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "text_input",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'reflection'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=reflection",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "reflection",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'reflection'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=reflection",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "reflection",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'generic_reflection'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=generic_reflection",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "generic_reflection",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'generic_reflection'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=generic_reflection",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "generic_reflection",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'reflection_types'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=reflection_types",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "reflection_types",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'reflection_types'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=reflection_types",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "reflection_types",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'trait_reflection'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=trait_reflection",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "trait_reflection",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'trait_reflection'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=trait_reflection",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "trait_reflection",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'scene'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=scene",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "scene",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'scene'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=scene",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "scene",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'custom_vertex_attribute'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=custom_vertex_attribute",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "custom_vertex_attribute",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'custom_vertex_attribute'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=custom_vertex_attribute",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "custom_vertex_attribute",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'post_processing'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=post_processing",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "post_processing",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'post_processing'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=post_processing",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "post_processing",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'shader_defs'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=shader_defs",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "shader_defs",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'shader_defs'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=shader_defs",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "shader_defs",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'shader_material'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=shader_material",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "shader_material",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'shader_material'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=shader_material",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "shader_material",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'shader_prepass'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=shader_prepass",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "shader_prepass",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'shader_prepass'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=shader_prepass",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "shader_prepass",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'shader_material_screenspace_texture'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=shader_material_screenspace_texture",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "shader_material_screenspace_texture",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'shader_material_screenspace_texture'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=shader_material_screenspace_texture",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "shader_material_screenspace_texture",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'shader_material_glsl'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=shader_material_glsl",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "shader_material_glsl",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'shader_material_glsl'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=shader_material_glsl",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "shader_material_glsl",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'shader_instancing'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=shader_instancing",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "shader_instancing",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'shader_instancing'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=shader_instancing",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "shader_instancing",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'animate_shader'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=animate_shader",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "animate_shader",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'animate_shader'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=animate_shader",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "animate_shader",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'compute_shader_game_of_life'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=compute_shader_game_of_life",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "compute_shader_game_of_life",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'compute_shader_game_of_life'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=compute_shader_game_of_life",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "compute_shader_game_of_life",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'array_texture'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=array_texture",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "array_texture",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'array_texture'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=array_texture",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "array_texture",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'texture_binding_array'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=texture_binding_array",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "texture_binding_array",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'texture_binding_array'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=texture_binding_array",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "texture_binding_array",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'bevymark'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=bevymark",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "bevymark",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'bevymark'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=bevymark",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "bevymark",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'many_animated_sprites'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=many_animated_sprites",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "many_animated_sprites",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'many_animated_sprites'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=many_animated_sprites",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "many_animated_sprites",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'many_buttons'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=many_buttons",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "many_buttons",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'many_buttons'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=many_buttons",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "many_buttons",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'many_cubes'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=many_cubes",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "many_cubes",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'many_cubes'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=many_cubes",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "many_cubes",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'many_foxes'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=many_foxes",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "many_foxes",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'many_foxes'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=many_foxes",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "many_foxes",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'many_glyphs'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=many_glyphs",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "many_glyphs",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'many_glyphs'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=many_glyphs",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "many_glyphs",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'many_lights'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=many_lights",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "many_lights",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'many_lights'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=many_lights",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "many_lights",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'many_sprites'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=many_sprites",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "many_sprites",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'many_sprites'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=many_sprites",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "many_sprites",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'transform_hierarchy'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=transform_hierarchy",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "transform_hierarchy",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'transform_hierarchy'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=transform_hierarchy",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "transform_hierarchy",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'text_pipeline'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=text_pipeline",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "text_pipeline",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'text_pipeline'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=text_pipeline",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "text_pipeline",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'scene_viewer'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=scene_viewer",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "scene_viewer",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'scene_viewer'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=scene_viewer",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "scene_viewer",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'gamepad_viewer'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=gamepad_viewer",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "gamepad_viewer",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'gamepad_viewer'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=gamepad_viewer",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "gamepad_viewer",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'nondeterministic_system_order'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=nondeterministic_system_order",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "nondeterministic_system_order",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'nondeterministic_system_order'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=nondeterministic_system_order",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "nondeterministic_system_order",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example '3d_rotation'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=3d_rotation",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "3d_rotation",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example '3d_rotation'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=3d_rotation",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "3d_rotation",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'scale'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=scale",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "scale",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'scale'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=scale",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "scale",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'transform'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=transform",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "transform",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'transform'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=transform",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "transform",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'translation'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=translation",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "translation",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'translation'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=translation",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "translation",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'button'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=button",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "button",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'button'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=button",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "button",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'window_fallthrough'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=window_fallthrough",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "window_fallthrough",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'window_fallthrough'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=window_fallthrough",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "window_fallthrough",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'font_atlas_debug'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=font_atlas_debug",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "font_atlas_debug",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'font_atlas_debug'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=font_atlas_debug",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "font_atlas_debug",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'relative_cursor_position'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=relative_cursor_position",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "relative_cursor_position",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'relative_cursor_position'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=relative_cursor_position",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "relative_cursor_position",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'text'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=text",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "text",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'text'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=text",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "text",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'text_debug'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=text_debug",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "text_debug",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'text_debug'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=text_debug",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "text_debug",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'text_layout'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=text_layout",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "text_layout",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'text_layout'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=text_layout",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "text_layout",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'transparency_ui'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=transparency_ui",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "transparency_ui",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'transparency_ui'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=transparency_ui",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "transparency_ui",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'z_index'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=z_index",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "z_index",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'z_index'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=z_index",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "z_index",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'ui'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=ui",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "ui",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'ui'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=ui",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "ui",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'ui_scaling'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=ui_scaling",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "ui_scaling",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'ui_scaling'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=ui_scaling",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "ui_scaling",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'clear_color'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=clear_color",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "clear_color",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'clear_color'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=clear_color",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "clear_color",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'low_power'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=low_power",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "low_power",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'low_power'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=low_power",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "low_power",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'multiple_windows'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=multiple_windows",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "multiple_windows",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'multiple_windows'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=multiple_windows",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "multiple_windows",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'scale_factor_override'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=scale_factor_override",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "scale_factor_override",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'scale_factor_override'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=scale_factor_override",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "scale_factor_override",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'transparent_window'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=transparent_window",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "transparent_window",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'transparent_window'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=transparent_window",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "transparent_window",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'window_settings'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=window_settings",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "window_settings",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'window_settings'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=window_settings",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "window_settings",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'resizing'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=resizing",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "resizing",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'resizing'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=resizing",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "resizing",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'minimising'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=minimising",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "minimising",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'minimising'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=minimising",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "minimising",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'window_resizing'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=window_resizing",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "window_resizing",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'window_resizing'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=window_resizing",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "window_resizing",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'bevy-ball-game'",
+            "env": {
+                "PATH": "${workspaceFolder}/target/debug/deps"
+            },
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=bevy-ball-game",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "bevy-ball-game",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'bevy-ball-game'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=bevy-ball-game",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "bevy-ball-game",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'chess_clone'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=chess_clone",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "chess_clone",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'chess_clone'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=chess_clone",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "chess_clone",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'custom_scene'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=custom_scene",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "custom_scene",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'custom_scene'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=custom_scene",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "custom_scene",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'hello_examples'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=hello_examples",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "hello_examples",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'hello_examples'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=hello_examples",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "hello_examples",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'jobs'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=jobs",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "jobs",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in example 'jobs'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--example=jobs",
+                    "--package=bevy_try"
+                ],
+                "filter": {
+                    "name": "jobs",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
