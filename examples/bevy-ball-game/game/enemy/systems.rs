@@ -2,6 +2,8 @@ use bevy::prelude::*;
 use bevy::window::PrimaryWindow;
 use rand::random;
 
+use crate::game::systems::random_position;
+
 use super::components::Enemy;
 use super::resource::EnemySpawnTimer;
 use super::{ENEMY_SIZE, ENEMY_SPEED, NUMBER_OF_ENEMIES};
@@ -14,9 +16,8 @@ pub fn spawn_enemies(
     let window = window_query.get_single().unwrap();
 
     for _ in 0..NUMBER_OF_ENEMIES {
-        let random_x = random::<f32>() * window.width();
-        let random_y = random::<f32>() * window.height();
-
+        let (random_x, random_y) = random_position(window, ENEMY_SIZE);
+        
         commands.spawn((
             SpriteBundle {
                 transform: Transform::from_xyz(random_x, random_y, 0.0),
@@ -54,7 +55,6 @@ pub fn update_enemy_direction(
     let x_max = window.width() - half_enemy_size;
     let y_min = 0.0 + half_enemy_size;
     let y_max = window.height() - half_enemy_size;
-
     for (transform, mut enemy) in enemy_query.iter_mut() {
         let translation = transform.translation;
         if translation.x < x_min || translation.x > x_max {
@@ -76,7 +76,7 @@ pub fn confine_enemy_movement(
     let x_min = 0.0 + half_enemy_size;
     let x_max = window.width() - half_enemy_size;
     let y_min = 0.0 + half_enemy_size;
-    let y_max = window.height() + half_enemy_size;
+    let y_max = window.height() - half_enemy_size;
 
     for mut transform in enemy_query.iter_mut() {
         let mut translation = transform.translation;
@@ -109,9 +109,7 @@ pub fn spawn_enemies_over_time(
 ) {
     if enemy_spawn_timer.timer.finished() {
         let window = window_query.get_single().unwrap();
-
-        let random_x = random::<f32>() * window.width();
-        let random_y = random::<f32>() * window.height();
+        let (random_x, random_y) = random_position(window, ENEMY_SIZE);
 
         commands.spawn((
             SpriteBundle {

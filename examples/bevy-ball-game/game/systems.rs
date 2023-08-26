@@ -1,7 +1,15 @@
 use bevy::prelude::*;
+use rand::random;
 
 use super::SimulationState;
 use crate::AppState;
+
+pub fn random_position(window: &Window, size: f32) -> (f32, f32) {
+    let range = |length| {
+        random::<f32>() * (length - size) + size / 2.0
+    };
+    (range(window.width()), range(window.height()))
+}
 
 pub fn pause_simulation(
     mut simulation_state_next_state: ResMut<NextState<SimulationState>>,
