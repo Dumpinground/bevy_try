@@ -18,6 +18,7 @@ rand = "0.8"
 bevy_rapier2d = { version = "*", features = ["simd-stable", "debug-render-2d"] }
 bevy_rapier3d = { version = "*", features = ["simd-stable", "debug-render-3d"] }
 rusalka = "1"
+bevy_third_person_camera = "0.1.5"
 
 # My Example
 [[example]]
