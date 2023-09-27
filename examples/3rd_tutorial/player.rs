@@ -52,15 +52,10 @@ fn player_movement(
     }
 }
 
-fn spawn_player(
-    mut commands: Commands,
-    mut meshes: ResMut<Assets<Mesh>>,
-    mut materials: ResMut<Assets<StandardMaterial>>,
-) {
+fn spawn_player(mut commands: Commands, assets: Res<AssetServer>) {
     let player = (
-        PbrBundle {
-            mesh: meshes.add(Mesh::from(shape::Cube::new(1.))),
-            material: materials.add(Color::BLUE.into()),
+        SceneBundle {
+            scene: assets.load("3rd_tutorial/Player.gltf#Scene0"),
             transform: Transform::from_xyz(0., 0.5, 0.),
             ..default()
         },
