@@ -7,6 +7,7 @@ use player::PlayerPlugin;
 use world::WorldPlugin;
 
 use bevy::prelude::*;
+use bevy_inspector_egui::quick::WorldInspectorPlugin;
 use bevy_third_person_camera::*;
 
 fn main() {
@@ -17,6 +18,7 @@ fn main() {
             CameraPlugin,
             WorldPlugin,
             ThirdPersonCameraPlugin,
+            WorldInspectorPlugin::new(),
         ))
         .run();
 }
