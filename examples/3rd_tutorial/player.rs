@@ -49,6 +49,10 @@ fn player_movement(
         direction.y = 0.;
         let movement = direction.normalize_or_zero() * player_speed.0 * time.delta_seconds();
         player_transform.translation += movement;
+
+        if direction.length_squared() > 0. {
+            player_transform.look_to(direction, Vec3::Y);
+        }
     }
 }
 
@@ -64,5 +68,9 @@ fn spawn_player(mut commands: Commands, assets: Res<AssetServer>) {
         ThirdPersonCameraTarget,
     );
 
-    commands.spawn(player);
+    let flashlight = SpotLightBundle::default();
+
+    commands.spawn(player).with_children(|parent| {
+        parent.spawn(flashlight);
+    });
 }
