@@ -1,5 +1,2 @@
-[target.x86_64-pc-windows-gnu]
-rustflags = [
-  # "-LD:/scoop/apps/mingw/current/x86_64-w64-mingw32/lib",
-  "-C", "link-arg=-fuse-ld=lld"
-]
+[target.x86_64-pc-windows-msvc]
+linker = "lld"
