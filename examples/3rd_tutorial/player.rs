@@ -66,9 +66,20 @@ fn spawn_player(mut commands: Commands, assets: Res<AssetServer>) {
         Speed(2.5),
         Player,
         ThirdPersonCameraTarget,
+        Name::new("Player"),
     );
 
-    let flashlight = SpotLightBundle::default();
+    let flashlight = (SpotLightBundle {
+        spot_light: SpotLight {
+            color: Color::rgba(1., 0.96, 0.37, 1.),
+            intensity: 4000.,
+            outer_angle: 0.6,
+            inner_angle: 0.5,
+            ..default()
+        },
+        transform: Transform::from_xyz(0., 0.3, 0.),
+        ..default()
+    }, Name::new("Flashlight"));
 
     commands.spawn(player).with_children(|parent| {
         parent.spawn(flashlight);
