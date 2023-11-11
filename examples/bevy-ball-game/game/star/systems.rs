@@ -1,6 +1,5 @@
 use bevy::prelude::*;
 use bevy::window::PrimaryWindow;
-use rand::random;
 
 use crate::game::systems::random_position;
 

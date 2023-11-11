@@ -25,8 +25,9 @@ pub struct PlayerPlugin;
 
 impl Plugin for PlayerPlugin {
     fn build(&self, app: &mut App) {
-        app.configure_set(
+        app.configure_sets(
             Update,
+            // (PlayerSystemSet::Movement, PlayerSystemSet::Confinement)
             PlayerSystemSet::Movement.before(PlayerSystemSet::Confinement),
         )
         .add_systems(OnEnter(AppState::Game), spawn_player)

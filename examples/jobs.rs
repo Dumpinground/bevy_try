@@ -11,11 +11,15 @@ pub struct PeoplePlugin;
 
 impl Plugin for PeoplePlugin {
     fn build(&self, app: &mut App) {
-        app.add_startup_system(setup)
-            .add_system(print_names)
-            .add_system(people_with_jobs)
-            .add_system(people_ready_for_hire)
-            .add_system(person_does_job);
+        app.add_systems(Startup, setup).add_systems(
+            Update,
+            (
+                print_names,
+                people_with_jobs,
+                people_ready_for_hire,
+                person_does_job,
+            ),
+        );
     }
 }
 
