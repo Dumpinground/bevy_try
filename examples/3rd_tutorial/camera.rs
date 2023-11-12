@@ -1,5 +1,5 @@
 use bevy::prelude::*;
-use bevy_third_person_camera::*;
+use bevy_third_person_camera::ThirdPersonCamera;
 
 pub struct CameraPlugin;
 

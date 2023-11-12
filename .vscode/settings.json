@@ -3,6 +3,8 @@
         "--example",
         "bevy-ball-game",
         "--example",
-        "custom_scene"
+        "custom_scene",
+        "--example",
+        "3rd_tutorial"
     ]
 }
