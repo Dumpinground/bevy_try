@@ -14,33 +14,33 @@ pub fn spawn_camera(mut commands: Commands, window_query: Query<&Window, With<Pr
 }
 
 pub fn transition_to_game_state(
-    keyboard_input: Res<Input<KeyCode>>,
+    keyboard_input: Res<ButtonInput<KeyCode>>,
     app_state: Res<State<AppState>>,
     mut app_state_next_state: ResMut<NextState<AppState>>,
 ) {
-    if keyboard_input.just_pressed(KeyCode::G) && !app_state.eq(&AppState::Game) {
+    if keyboard_input.just_pressed(KeyCode::KeyG) && !app_state.eq(&AppState::Game) {
         app_state_next_state.set(AppState::Game);
         println!("Entered AppState::Game");
     }
 }
 
 pub fn transition_to_main_menu_state(
-    keyboard_input: Res<Input<KeyCode>>,
+    keyboard_input: Res<ButtonInput<KeyCode>>,
     app_state: Res<State<AppState>>,
     mut app_state_next_state: ResMut<NextState<AppState>>,
 ) {
-    if keyboard_input.just_pressed(KeyCode::M) && !app_state.eq(&AppState::MainMenu) {
+    if keyboard_input.just_pressed(KeyCode::KeyM) && !app_state.eq(&AppState::MainMenu) {
         app_state_next_state.set(AppState::MainMenu);
         println!("Entered AppState::MainMenu");
     }
 }
 
 pub fn exit_game(
-    keyboard_input: Res<Input<KeyCode>>,
+    keyboard_input: Res<ButtonInput<KeyCode>>,
     mut app_exit_event_writer: EventWriter<AppExit>,
 ) {
     if keyboard_input.just_pressed(KeyCode::Escape) {
-        app_exit_event_writer.send(AppExit)
+        app_exit_event_writer.send(AppExit);
     }
 }
 

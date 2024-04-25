@@ -41,7 +41,7 @@ pub fn build_pause_menu(commands: &mut Commands, asset_server: &Res<AssetServer>
                                 "Pause Menu",
                                 get_title_text_style(asset_server),
                             )],
-                            alignment: TextAlignment::Center,
+                            justify: JustifyText::Center,
                             ..default()
                         },
                         ..default()
@@ -64,7 +64,7 @@ pub fn build_pause_menu(commands: &mut Commands, asset_server: &Res<AssetServer>
                                         "Resume",
                                         get_button_text_style(asset_server),
                                     )],
-                                    alignment: TextAlignment::Center,
+                                    justify: JustifyText::Center,
                                     ..default()
                                 },
                                 ..default()
@@ -88,7 +88,7 @@ pub fn build_pause_menu(commands: &mut Commands, asset_server: &Res<AssetServer>
                                         "Main Menu",
                                         get_button_text_style(asset_server),
                                     )],
-                                    alignment: TextAlignment::Center,
+                                    justify: JustifyText::Center,
                                     ..default()
                                 },
                                 ..default()
@@ -112,7 +112,7 @@ pub fn build_pause_menu(commands: &mut Commands, asset_server: &Res<AssetServer>
                                         "Quit",
                                         get_button_text_style(asset_server),
                                     )],
-                                    alignment: TextAlignment::Center,
+                                    justify: JustifyText::Center,
                                     ..default()
                                 },
                                 ..default()

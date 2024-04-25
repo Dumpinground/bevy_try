@@ -23,7 +23,7 @@ impl Plugin for GamePlugin {
         app
             // Event
             .add_event::<GameOver>()
-            .add_state::<SimulationState>()
+            .init_state::<SimulationState>()
             // System
             .add_plugins((
                 PlayerPlugin,

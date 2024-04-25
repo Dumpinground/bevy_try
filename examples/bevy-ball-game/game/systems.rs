@@ -30,7 +30,7 @@ pub fn resume_simulation(
 }
 
 pub fn toggle_simulation(
-    keyboard_input: Res<Input<KeyCode>>,
+    keyboard_input: Res<ButtonInput<KeyCode>>,
     simulation_state: Res<State<SimulationState>>,
     simulation_state_next_state: ResMut<NextState<SimulationState>>,
     app_state: Res<State<AppState>>,
