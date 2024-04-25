@@ -1,21 +1,32 @@
 use std::f32::consts::PI;
 
 use bevy::{
+    math::Vec3Swizzles,
     pbr::{NotShadowCaster, NotShadowReceiver},
-    prelude::*, math::Vec3Swizzles,
+    prelude::*,
 };
+use bevy_panorbit_camera::{PanOrbitCamera, PanOrbitCameraPlugin};
 use rusalka::NoiseGenerator;
 
 fn main() {
     App::new()
-        .add_plugins(DefaultPlugins)
+        .add_plugins((DefaultPlugins, PanOrbitCameraPlugin))
         .insert_resource(TankConfig {
             tank_count: 20,
             safe_zone_radius: 8.,
         })
         .init_resource::<CannonBallMesh>()
         .add_systems(Startup, (setup, tank_spawn))
-        .add_systems(Update, (tank_move, cannon_ball_velocity, check_safe_zone, turret_rotate, turret_shoot.after(turret_rotate)))
+        .add_systems(
+            Update,
+            (
+                tank_move,
+                cannon_ball_velocity,
+                check_safe_zone,
+                turret_rotate,
+                turret_shoot.after(turret_rotate),
+            ),
+        )
         .run();
 }
 
@@ -41,7 +52,7 @@ pub struct SpawnPoint;
 
 #[derive(Component)]
 pub struct CannonBall {
-    velocity: Vec3
+    velocity: Vec3,
 }
 
 #[derive(Component)]
@@ -53,15 +64,7 @@ pub struct CannonBallMesh(Handle<Mesh>);
 impl FromWorld for CannonBallMesh {
     fn from_world(world: &mut World) -> Self {
         let mut meshes = world.resource_mut::<Assets<Mesh>>();
-        Self(
-            meshes.add(
-                shape::UVSphere {
-                    radius: 0.1,
-                    ..default()
-                }
-                .into(),
-            ),
-        )
+        Self(meshes.add(Sphere::new(0.1)))
     }
 }
 
@@ -72,8 +75,8 @@ fn setup(
     mut materials: ResMut<Assets<StandardMaterial>>,
 ) {
     commands.spawn(PbrBundle {
-        mesh: meshes.add(shape::Plane::from_size(500.).into()),
-        material: materials.add(Color::GRAY.into()),
+        mesh: meshes.add(Plane3d::default().mesh().size(500., 500.)),
+        material: materials.add(Color::GRAY),
         ..default()
     });
 
@@ -87,22 +90,17 @@ fn setup(
         ..default()
     });
 
-    commands.spawn(Camera3dBundle {
-        transform: Transform::from_xyz(-50., 20., 5.).looking_at(Vec3::ZERO, Vec3::Y),
-        ..default()
-    });
+    commands.spawn((
+        Camera3dBundle {
+            transform: Transform::from_xyz(-50., 20., 5.).looking_at(Vec3::ZERO, Vec3::Y),
+            ..default()
+        },
+        PanOrbitCamera::default(),
+    ));
 
     commands.spawn((
         PbrBundle {
-            mesh: meshes
-                .add(
-                    shape::UVSphere {
-                        radius: tank_config.safe_zone_radius,
-                        ..default()
-                    }
-                    .into(),
-                )
-                .into(),
+            mesh: meshes.add(Sphere::new(tank_config.safe_zone_radius)),
             material: materials.add(StandardMaterial {
                 base_color: Color::rgba(0.2, 0.8, 0.2, 0.4),
                 unlit: true,
@@ -122,24 +120,11 @@ fn tank_spawn(
     mut meshes: ResMut<Assets<Mesh>>,
     mut materials: ResMut<Assets<StandardMaterial>>,
 ) {
-    let tank_mesh = meshes.add(shape::Cube::new(1.0).into());
+    let tank_mesh = meshes.add(Cuboid::new(1., 1., 1.));
 
-    let turret_mesh = meshes.add(
-        shape::UVSphere {
-            radius: 0.5,
-            ..default()
-        }
-        .into(),
-    );
+    let turret_mesh = meshes.add(Sphere::new(0.5));
 
-    let cannon_mesh = meshes.add(
-        shape::Cylinder {
-            radius: 0.5,
-            height: 2.0,
-            ..default()
-        }
-        .into(),
-    );
+    let cannon_mesh = meshes.add(Cylinder::new(0.5, 2.));
 
     for _ in 0..tank_config.tank_count {
         let material = materials.add(StandardMaterial {
@@ -219,22 +204,39 @@ fn turret_rotate(mut turret: Query<&mut Transform, With<Turret>>, time: Res<Time
     }
 }
 
-fn turret_shoot(mut commands: Commands, cannon_ball_mesh: Res<CannonBallMesh>, turrets: Query<(&Turret, &Handle<StandardMaterial>, &GlobalTransform), With<Shooting>>, global_transform_query: Query<&GlobalTransform>) {
+fn turret_shoot(
+    mut commands: Commands,
+    cannon_ball_mesh: Res<CannonBallMesh>,
+    turrets: Query<(&Turret, &Handle<StandardMaterial>, &GlobalTransform), With<Shooting>>,
+    global_transform_query: Query<&GlobalTransform>,
+) {
     for (turret, material, global_transform) in turrets.iter() {
-        let spawn_point_pos = global_transform_query.get(turret.spawn_point).unwrap().translation();
-        commands.spawn((CannonBall { velocity: global_transform.up() * 20. }, PbrBundle {
-            material: material.clone(),
-            transform: Transform::from_translation(spawn_point_pos),
-            mesh: cannon_ball_mesh.0.clone(),
-            ..default()
-        }));
+        let spawn_point_pos = global_transform_query
+            .get(turret.spawn_point)
+            .unwrap()
+            .translation();
+        commands.spawn((
+            CannonBall {
+                velocity: global_transform.up() * 20.,
+            },
+            PbrBundle {
+                material: material.clone(),
+                transform: Transform::from_translation(spawn_point_pos),
+                mesh: cannon_ball_mesh.0.clone(),
+                ..default()
+            },
+        ));
     }
 }
 
 const GRAVITY: Vec3 = Vec3::new(0., -9.82, 0.);
 const INVERT_Y: Vec3 = Vec3::new(1., -1., 1.);
 
-fn cannon_ball_velocity(mut cannon_ball: Query<(&mut CannonBall, &mut Transform, Entity)>, time: Res<Time>, mut commands: Commands) {
+fn cannon_ball_velocity(
+    mut cannon_ball: Query<(&mut CannonBall, &mut Transform, Entity)>,
+    time: Res<Time>,
+    mut commands: Commands,
+) {
     let dt = time.delta_seconds();
 
     for (mut cannon_ball, mut transform, entity) in cannon_ball.iter_mut() {
@@ -253,16 +255,18 @@ fn cannon_ball_velocity(mut cannon_ball: Query<(&mut CannonBall, &mut Transform,
     }
 }
 
-fn check_safe_zone(turrets: Query<(Entity, &GlobalTransform, Option<&Shooting>), With<Turret>>, tank_config: Res<TankConfig>, mut commands: Commands) {
+fn check_safe_zone(
+    turrets: Query<(Entity, &GlobalTransform, Option<&Shooting>), With<Turret>>,
+    tank_config: Res<TankConfig>,
+    mut commands: Commands,
+) {
     for (entity, global_transform, shooting) in turrets.iter() {
         if global_transform.translation().xz().length() > tank_config.safe_zone_radius {
             if shooting.is_none() {
                 commands.entity(entity).insert(Shooting);
             }
-        } else {
-            if shooting.is_some() {
-                commands.entity(entity).remove::<Shooting>();
-            }
+        } else if shooting.is_some() {
+            commands.entity(entity).remove::<Shooting>();
         }
     }
 }
