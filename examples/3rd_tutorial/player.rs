@@ -17,7 +17,7 @@ struct Player;
 struct Speed(f32);
 
 fn player_movement(
-    keys: Res<Input<KeyCode>>,
+    keys: Res<ButtonInput<KeyCode>>,
     time: Res<Time>,
     mut player_q: Query<(&mut Transform, &Speed), With<Player>>,
     cam_q: Query<&Transform, (With<Camera3d>, Without<Player>)>,
@@ -26,24 +26,24 @@ fn player_movement(
         let cam = match cam_q.get_single() {
             Ok(c) => c,
             Err(e) => Err(format!("Error retrieving camera: {}", e)).unwrap(),
-        };
+        }; 
 
         let mut direction = Vec3::ZERO;
 
-        if keys.pressed(KeyCode::W) {
-            direction += cam.forward();
+        if keys.pressed(KeyCode::KeyW) {
+            direction += *cam.forward();
         }
 
-        if keys.pressed(KeyCode::S) {
-            direction += cam.back();
+        if keys.pressed(KeyCode::KeyS) {
+            direction += *cam.back();
         }
 
-        if keys.pressed(KeyCode::A) {
-            direction += cam.left();
+        if keys.pressed(KeyCode::KeyA) {
+            direction += *cam.left();
         }
 
-        if keys.pressed(KeyCode::D) {
-            direction += cam.right();
+        if keys.pressed(KeyCode::KeyD) {
+            direction += *cam.right();
         }
 
         direction.y = 0.;
