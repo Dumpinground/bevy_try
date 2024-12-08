@@ -3,10 +3,10 @@ use bevy::window::PrimaryWindow;
 
 use crate::game::systems::random_position;
 
-use super::STAR_SIZE;
 use super::components::Star;
 use super::resources::*;
 use super::NUMBER_OF_STARS;
+use super::STAR_SIZE;
 
 pub fn spawn_stars(
     mut commands: Commands,
@@ -17,13 +17,10 @@ pub fn spawn_stars(
 
     for _ in 0..NUMBER_OF_STARS {
         let (random_x, random_y) = random_position(window, STAR_SIZE);
-        
+
         commands.spawn((
-            SpriteBundle {
-                transform: Transform::from_xyz(random_x, random_y, 0.0),
-                texture: asset_server.load("ball-game/sprites/star.png"),
-                ..default()
-            },
+            Sprite::from_image(asset_server.load("ball-game/sprites/star.png")),
+            Transform::from_xyz(random_x, random_y, 0.0),
             Star {},
         ));
     }
@@ -50,11 +47,8 @@ pub fn spawn_stars_over_time(
         let (random_x, random_y) = random_position(window, STAR_SIZE);
 
         commands.spawn((
-            SpriteBundle {
-                transform: Transform::from_xyz(random_x, random_y, 0.0),
-                texture: asset_server.load("ball-game/sprites/star.png"),
-                ..default()
-            },
+            Sprite::from_image(asset_server.load("ball-game/sprites/star.png")),
+            Transform::from_xyz(random_x, random_y, 0.0),
             Star {},
         ));
     }

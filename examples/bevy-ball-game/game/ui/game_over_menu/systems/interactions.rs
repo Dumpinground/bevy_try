@@ -61,7 +61,7 @@ pub fn interact_with_quit_button(
         match *interaction {
             Interaction::Pressed => {
                 *color = PRESSED_BUTTON.into();
-                app_exit_event_writer.send(AppExit);
+                app_exit_event_writer.send(AppExit::Success);
             }
             Interaction::Hovered => {
                 *color = HOVERED_BUTTON.into();

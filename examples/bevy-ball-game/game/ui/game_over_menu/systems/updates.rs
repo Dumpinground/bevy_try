@@ -1,7 +1,7 @@
 use bevy::prelude::*;
 
-use crate::events::GameOver;
 use super::super::components::FinalScoreText;
+use crate::events::GameOver;
 
 pub fn update_final_score_text(
     mut game_over_event_reader: EventReader<GameOver>,
@@ -9,7 +9,7 @@ pub fn update_final_score_text(
 ) {
     for event in game_over_event_reader.read() {
         for mut text in text_query.iter_mut() {
-            text.sections[0].value = format!("Final Score: {}", event.score);
+            text.0 = format!("Final Score: {}", event.score);
         }
     }
 }

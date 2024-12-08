@@ -17,13 +17,10 @@ pub fn spawn_enemies(
 
     for _ in 0..NUMBER_OF_ENEMIES {
         let (random_x, random_y) = random_position(window, ENEMY_SIZE);
-        
+
         commands.spawn((
-            SpriteBundle {
-                transform: Transform::from_xyz(random_x, random_y, 0.0),
-                texture: asset_server.load("ball-game/sprites/ball_red_large.png"),
-                ..default()
-            },
+            Sprite::from_image(asset_server.load("ball-game/sprites/ball_red_large.png")),
+            Transform::from_xyz(random_x, random_y, 0.0),
             Enemy {
                 direction: Vec2::new(random::<f32>(), random::<f32>()).normalize(),
             },
@@ -40,7 +37,7 @@ pub fn despawn_enemies(mut commands: Commands, enemy_query: Query<Entity, With<E
 pub fn enemy_movement(mut enemy_query: Query<(&mut Transform, &Enemy)>, time: Res<Time>) {
     for (mut transform, enemy) in enemy_query.iter_mut() {
         let direction = Vec3::new(enemy.direction.x, enemy.direction.y, 0.0);
-        transform.translation += direction * ENEMY_SPEED * time.delta_seconds()
+        transform.translation += direction * ENEMY_SPEED * time.delta_secs()
     }
 }
 
@@ -112,11 +109,8 @@ pub fn spawn_enemies_over_time(
         let (random_x, random_y) = random_position(window, ENEMY_SIZE);
 
         commands.spawn((
-            SpriteBundle {
-                transform: Transform::from_xyz(random_x, random_y, 0.0),
-                texture: asset_server.load("ball-game/sprites/ball_red_large.png"),
-                ..default()
-            },
+            Sprite::from_image(asset_server.load("ball-game/sprites/ball_red_large.png")),
+            Transform::from_xyz(random_x, random_y, 0.0),
             Enemy {
                 direction: Vec2::new(random::<f32>(), random::<f32>()).normalize(),
             },

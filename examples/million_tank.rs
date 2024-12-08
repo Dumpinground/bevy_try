@@ -1,6 +1,7 @@
 use std::f32::consts::PI;
 
 use bevy::{
+    color::palettes::css::GRAY,
     math::Vec3Swizzles,
     pbr::{NotShadowCaster, NotShadowReceiver},
     prelude::*,
@@ -74,41 +75,34 @@ fn setup(
     mut meshes: ResMut<Assets<Mesh>>,
     mut materials: ResMut<Assets<StandardMaterial>>,
 ) {
-    commands.spawn(PbrBundle {
-        mesh: meshes.add(Plane3d::default().mesh().size(500., 500.)),
-        material: materials.add(Color::GRAY),
-        ..default()
-    });
+    commands.spawn((
+        Mesh3d(meshes.add(Plane3d::default().mesh().size(500., 500.))),
+        MeshMaterial3d(materials.add(Color::from(GRAY))),
+    ));
 
-    commands.spawn(DirectionalLightBundle {
-        directional_light: DirectionalLight {
-            color: Color::rgb(0.98, 0.95, 0.82),
+    commands.spawn((
+        DirectionalLight {
+            color: Color::srgb(0.98, 0.95, 0.82),
             shadows_enabled: true,
             ..default()
         },
-        transform: Transform::from_xyz(1., 1., 1.).looking_at(Vec3::ZERO, Vec3::Y),
-        ..default()
-    });
+        Transform::from_xyz(1., 1., 1.).looking_at(Vec3::ZERO, Vec3::Y),
+    ));
 
     commands.spawn((
-        Camera3dBundle {
-            transform: Transform::from_xyz(-50., 20., 5.).looking_at(Vec3::ZERO, Vec3::Y),
-            ..default()
-        },
+        Camera3d::default(),
+        Transform::from_xyz(-50., 20., 5.).looking_at(Vec3::ZERO, Vec3::Y),
         PanOrbitCamera::default(),
     ));
 
     commands.spawn((
-        PbrBundle {
-            mesh: meshes.add(Sphere::new(tank_config.safe_zone_radius)),
-            material: materials.add(StandardMaterial {
-                base_color: Color::rgba(0.2, 0.8, 0.2, 0.4),
-                unlit: true,
-                alpha_mode: AlphaMode::Blend,
-                ..default()
-            }),
+        Mesh3d(meshes.add(Sphere::new(tank_config.safe_zone_radius))),
+        MeshMaterial3d(materials.add(StandardMaterial {
+            base_color: Color::srgba(0.2, 0.8, 0.2, 0.4),
+            unlit: true,
+            alpha_mode: AlphaMode::Blend,
             ..default()
-        },
+        })),
         NotShadowCaster,
         NotShadowReceiver,
     ));
@@ -143,12 +137,9 @@ fn tank_spawn(
         let cannon = commands
             .spawn((
                 Cannon,
-                PbrBundle {
-                    mesh: cannon_mesh.clone(),
-                    transform: Transform::from_xyz(0., 0.5, 0.)
-                        .with_scale(Vec3::new(0.2, 0.5, 0.2)),
-                    ..default()
-                },
+                Mesh3d(cannon_mesh.clone()),
+                MeshMaterial3d(material.clone()),
+                Transform::from_xyz(0., 0.5, 0.).with_scale(Vec3::new(0.2, 0.5, 0.2)),
             ))
             .add_child(spawn_point)
             .id();
@@ -156,13 +147,9 @@ fn tank_spawn(
         let turret = commands
             .spawn((
                 Turret { spawn_point },
-                PbrBundle {
-                    mesh: turret_mesh.clone(),
-                    material: material.clone(),
-                    transform: Transform::from_xyz(0., 0.5, 0.)
-                        .with_rotation(Quat::from_rotation_x(45.)),
-                    ..default()
-                },
+                Mesh3d(turret_mesh.clone()),
+                MeshMaterial3d(material.clone()),
+                Transform::from_xyz(0., 0.5, 0.).with_rotation(Quat::from_rotation_x(45.)),
             ))
             .add_child(cannon)
             .id();
@@ -170,19 +157,16 @@ fn tank_spawn(
         commands
             .spawn((
                 Tank,
-                PbrBundle {
-                    mesh: tank_mesh.clone(),
-                    material: material.clone(),
-                    transform: Transform::from_xyz(0., 0.5, 0.),
-                    ..default()
-                },
+                Mesh3d(tank_mesh.clone()),
+                MeshMaterial3d(material.clone()),
+                Transform::from_xyz(0., 0.5, 0.),
             ))
             .add_child(turret);
     }
 }
 
 fn tank_move(mut tanks: Query<(Entity, &mut Transform), With<Tank>>, time: Res<Time>) {
-    let dt = time.delta_seconds();
+    let dt = time.delta_secs();
     let generator = NoiseGenerator::new("Nose");
     for (entity, mut transform) in tanks.iter_mut() {
         let mut pos = transform.translation;
@@ -197,7 +181,7 @@ fn tank_move(mut tanks: Query<(Entity, &mut Transform), With<Tank>>, time: Res<T
 }
 
 fn turret_rotate(mut turret: Query<&mut Transform, With<Turret>>, time: Res<Time>) {
-    let rotation_y = Quat::from_rotation_y(time.delta_seconds() * PI);
+    let rotation_y = Quat::from_rotation_y(time.delta_secs() * PI);
 
     for mut transform in turret.iter_mut() {
         transform.rotation = rotation_y * transform.rotation;
@@ -207,7 +191,7 @@ fn turret_rotate(mut turret: Query<&mut Transform, With<Turret>>, time: Res<Time
 fn turret_shoot(
     mut commands: Commands,
     cannon_ball_mesh: Res<CannonBallMesh>,
-    turrets: Query<(&Turret, &Handle<StandardMaterial>, &GlobalTransform), With<Shooting>>,
+    turrets: Query<(&Turret, &MeshMaterial3d<StandardMaterial>, &GlobalTransform), With<Shooting>>,
     global_transform_query: Query<&GlobalTransform>,
 ) {
     for (turret, material, global_transform) in turrets.iter() {
@@ -215,16 +199,14 @@ fn turret_shoot(
             .get(turret.spawn_point)
             .unwrap()
             .translation();
+
         commands.spawn((
             CannonBall {
                 velocity: global_transform.up() * 20.,
             },
-            PbrBundle {
-                material: material.clone(),
-                transform: Transform::from_translation(spawn_point_pos),
-                mesh: cannon_ball_mesh.0.clone(),
-                ..default()
-            },
+            Mesh3d(cannon_ball_mesh.0.clone()),
+            MeshMaterial3d(material.0.clone()),
+            Transform::from_translation(spawn_point_pos),
         ));
     }
 }
@@ -237,7 +219,7 @@ fn cannon_ball_velocity(
     time: Res<Time>,
     mut commands: Commands,
 ) {
-    let dt = time.delta_seconds();
+    let dt = time.delta_secs();
 
     for (mut cannon_ball, mut transform, entity) in cannon_ball.iter_mut() {
         transform.translation += cannon_ball.velocity * dt;

@@ -4,7 +4,7 @@ fn main() {
     App::new()
         // .add_plugins(DefaultPlugins)
         .add_plugins(PeoplePlugin)
-        .run()
+        .run();
 }
 
 pub struct PeoplePlugin;

@@ -9,120 +9,76 @@ pub fn spawn_game_over_menu(mut commands: Commands, asset_server: Res<AssetServe
 
 pub fn build_game_over_menu(commands: &mut Commands, asset_server: &Res<AssetServer>) -> Entity {
     let game_over_menu_entity = commands
-        .spawn((
-            NodeBundle {
-                style: Styles::game_over_menu(),
-                z_index: ZIndex::Local(2),
-                ..default()
-            },
-            GameOverMenu {},
-        ))
+        .spawn((Styles::game_over_menu(), ZIndex(2), GameOverMenu {}))
         .with_children(|parent| {
             parent
-                .spawn(NodeBundle {
-                    style: Styles::game_over_menu_container(),
-                    background_color: BACKGROUND_COLOR.into(),
-                    ..default()
-                })
+                .spawn((
+                    Styles::game_over_menu_container(),
+                    BackgroundColor(BACKGROUND_COLOR),
+                ))
                 .with_children(|parent| {
                     // Title
-                    parent.spawn(TextBundle {
-                        text: Text {
-                            sections: vec![TextSection::new(
-                                "Game Over",
-                                get_title_text_style(asset_server),
-                            )],
-                            justify: JustifyText::Center,
-                            ..default()
-                        },
-                        ..default()
-                    });
+                    parent.spawn((
+                        Text::new("Game Over"),
+                        TextLayout::new_with_justify(JustifyText::Center),
+                        get_title_text_font(asset_server),
+                        get_text_color(),
+                    ));
                     // Final Score Text
                     parent.spawn((
-                        TextBundle {
-                            text: Text {
-                                sections: vec![TextSection::new(
-                                    "Your final score was:",
-                                    get_final_score_text_style(asset_server),
-                                )],
-                                justify: JustifyText::Center,
-                                ..default()
-                            },
-                            ..default()
-                        },
+                        Text::new("Your final score was:"),
+                        TextLayout::new_with_justify(JustifyText::Center),
+                        get_final_score_text_font(asset_server),
+                        get_text_color(),
                         FinalScoreText {},
                     ));
                     // Restart Button
                     parent
                         .spawn((
-                            ButtonBundle {
-                                style: Styles::button(),
-                                background_color: NORMAL_BUTTON.into(),
-                                ..default()
-                            },
+                            Styles::button(),
+                            Button,
+                            BackgroundColor(BACKGROUND_COLOR),
                             RestartButton {},
                         ))
                         .with_children(|parent| {
-                            parent.spawn(TextBundle {
-                                style: Style::DEFAULT,
-                                text: Text {
-                                    sections: vec![TextSection::new(
-                                        "Restart",
-                                        get_button_text_style(asset_server),
-                                    )],
-                                    justify: JustifyText::Center,
-                                    ..default()
-                                },
-                                ..default()
-                            });
+                            parent.spawn((
+                                Text::new("Restart"),
+                                TextLayout::new_with_justify(JustifyText::Center),
+                                get_button_text_font(asset_server),
+                                get_text_color(),
+                            ));
                         });
                     // Main Menu Button
                     parent
                         .spawn((
-                            ButtonBundle {
-                                style: Styles::button(),
-                                background_color: NORMAL_BUTTON.into(),
-                                ..default()
-                            },
+                            Styles::button(),
+                            Button,
+                            BackgroundColor(BACKGROUND_COLOR),
                             MainMenuButton {},
                         ))
                         .with_children(|parent| {
-                            parent.spawn(TextBundle {
-                                style: Style::DEFAULT,
-                                text: Text {
-                                    sections: vec![TextSection::new(
-                                        "Main Menu",
-                                        get_button_text_style(asset_server),
-                                    )],
-                                    justify: JustifyText::Center,
-                                    ..default()
-                                },
-                                ..default()
-                            });
+                            parent.spawn((
+                                Text::new("Main Menu"),
+                                TextLayout::new_with_justify(JustifyText::Center),
+                                get_button_text_font(asset_server),
+                                get_text_color(),
+                            ));
                         });
                     // Quit Button
                     parent
                         .spawn((
-                            ButtonBundle {
-                                style: Styles::button(),
-                                background_color: NORMAL_BUTTON.into(),
-                                ..default()
-                            },
+                            Styles::button(),
+                            Button,
+                            BackgroundColor(BACKGROUND_COLOR),
                             QuitButton {},
                         ))
                         .with_children(|parent| {
-                            parent.spawn(TextBundle {
-                                style: Style::DEFAULT,
-                                text: Text {
-                                    sections: vec![TextSection::new(
-                                        "Quit",
-                                        get_button_text_style(asset_server),
-                                    )],
-                                    justify: JustifyText::Center,
-                                    ..default()
-                                },
-                                ..default()
-                            });
+                            parent.spawn((
+                                Text::new("Quit"),
+                                TextLayout::new_with_justify(JustifyText::Center),
+                                get_button_text_font(asset_server),
+                                get_text_color(),
+                            ));
                         });
                 });
         })

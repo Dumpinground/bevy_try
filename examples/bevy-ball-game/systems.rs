@@ -7,10 +7,10 @@ use crate::AppState;
 pub fn spawn_camera(mut commands: Commands, window_query: Query<&Window, With<PrimaryWindow>>) {
     let window = window_query.get_single().unwrap();
 
-    commands.spawn(Camera2dBundle {
-        transform: Transform::from_xyz(window.width() / 2.0, window.height() / 2.0, 0.0),
-        ..default()
-    });
+    commands.spawn((
+        Camera2d,
+        Transform::from_xyz(window.width() / 2.0, window.height() / 2.0, 0.0),
+    ));
 }
 
 pub fn transition_to_game_state(
@@ -40,7 +40,7 @@ pub fn exit_game(
     mut app_exit_event_writer: EventWriter<AppExit>,
 ) {
     if keyboard_input.just_pressed(KeyCode::Escape) {
-        app_exit_event_writer.send(AppExit);
+        app_exit_event_writer.send(AppExit::Success);
     }
 }
 

@@ -15,98 +15,68 @@ pub fn despawn_main_menu(mut commands: Commands, main_menu_query: Query<Entity, 
 
 pub fn build_main_menu(commands: &mut Commands, asset_server: &Res<AssetServer>) -> Entity {
     let main_manu_entity = commands
-        .spawn((
-            NodeBundle {
-                style: Styles::main_menu(),
-                ..default()
-            },
-            MainMenu {},
-        ))
+        .spawn((Styles::main_menu(), MainMenu {}))
         .with_children(|parent| {
             // === Title ===
-            parent
-                .spawn(NodeBundle {
-                    style: Styles::title(),
-                    ..default()
-                })
-                .with_children(|parent| {
-                    // Image 1
-                    parent.spawn(ImageBundle {
-                        style: Styles::image(),
-                        image: asset_server
-                            .load("ball-game/sprites/ball_blue_large.png")
-                            .into(),
+            parent.spawn(Styles::title()).with_children(|parent| {
+                // Image 1
+                parent.spawn((
+                    Styles::image(),
+                    ImageNode {
+                        image: asset_server.load("ball-game/sprites/ball_blue_large.png"),
                         ..default()
-                    });
-                    // Text
-                    parent.spawn(TextBundle {
-                        text: Text {
-                            sections: vec![TextSection::new(
-                                "Bevy Ball Game",
-                                get_title_text_style(asset_server),
-                            )],
-                            justify: JustifyText::Center,
-                            ..default()
-                        },
-                        ..default()
-                    });
+                    },
+                ));
+                // Text
+                parent.spawn((
+                    Text::new("Bevy Ball Game"),
+                    TextLayout::new_with_justify(JustifyText::Center),
+                    get_title_text_font(asset_server),
+                    get_text_color(),
+                ));
 
-                    // Image 2
-                    parent.spawn(ImageBundle {
-                        style: Styles::image(),
-                        image: asset_server
-                            .load("ball-game/sprites/ball_red_large.png")
-                            .into(),
+                // Image 2
+                parent.spawn((
+                    Styles::image(),
+                    ImageNode {
+                        image: asset_server.load("ball-game/sprites/ball_red_large.png"),
                         ..default()
-                    });
-                });
+                    },
+                ));
+            });
 
             // ===Play Button===
             parent
                 .spawn((
-                    ButtonBundle {
-                        style: Styles::button(),
-                        background_color: NORMAL_BUTTON_COLOR.into(),
-                        ..default()
-                    },
+                    Styles::button(),
+                    BackgroundColor(NORMAL_BUTTON_COLOR),
+                    Button,
                     PlayButton {},
                 ))
                 .with_children(|parent| {
-                    parent.spawn(TextBundle {
-                        text: Text {
-                            sections: vec![TextSection::new(
-                                "Play",
-                                get_button_text_style(asset_server),
-                            )],
-                            justify: JustifyText::Center,
-                            ..default()
-                        },
-                        ..default()
-                    });
+                    parent.spawn((
+                        Text::new("Play"),
+                        TextLayout::new_with_justify(JustifyText::Center),
+                        get_button_text_font(asset_server),
+                        get_text_color(),
+                    ));
                 });
 
             // ===Quit Button===
             parent
                 .spawn((
-                    ButtonBundle {
-                        style: Styles::button(),
-                        background_color: NORMAL_BUTTON_COLOR.into(),
-                        ..default()
-                    },
+                    Styles::button(),
+                    BackgroundColor(NORMAL_BUTTON_COLOR),
+                    Button,
                     QuitButton {},
                 ))
                 .with_children(|parent| {
-                    parent.spawn(TextBundle {
-                        text: Text {
-                            sections: vec![TextSection::new(
-                                "Quit",
-                                get_button_text_style(asset_server),
-                            )],
-                            justify: JustifyText::Center,
-                            ..default()
-                        },
-                        ..default()
-                    });
+                    parent.spawn((
+                        Text::new("Quit"),
+                        TextLayout::new_with_justify(JustifyText::Center),
+                        get_button_text_font(asset_server),
+                        get_text_color(),
+                    ));
                 });
         })
         .id();

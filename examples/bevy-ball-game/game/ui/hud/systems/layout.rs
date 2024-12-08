@@ -8,76 +8,50 @@ pub fn spawn_hud(mut commands: Commands, asset_server: Res<AssetServer>) {
 
 pub fn build_hud(commands: &mut Commands, asset_server: &Res<AssetServer>) -> Entity {
     let hud_entity = commands
-        .spawn((
-            NodeBundle {
-                style: Styles::hud(),
-                ..default()
-            },
-            HUD {},
-        ))
+        .spawn((Styles::hud(), HUD {}))
         .with_children(|parent| {
             // LHS
             parent
-                .spawn(NodeBundle {
-                    style: Styles::lhs(),
-                    background_color: BACKGROUND_COLOR.into(),
-                    ..default()
-                })
+                .spawn((Styles::lhs(), BackgroundColor(BACKGROUND_COLOR)))
                 .with_children(|parent| {
                     // Star Image
-                    parent.spawn(ImageBundle {
-                        style: Styles::image(),
-                        image: asset_server.load("ball-game/sprites/star.png").into(),
-                        ..default()
-                    });
-                    // Score Text
                     parent.spawn((
-                        TextBundle {
-                            text: Text {
-                                sections: vec![TextSection::new(
-                                    "0",
-                                    get_text_style(asset_server),
-                                )],
-                                justify: JustifyText::Center,
-                                ..default()
-                            },
+                        Styles::image(),
+                        ImageNode {
+                            image: asset_server.load("ball-game/sprites/star.png"),
                             ..default()
                         },
+                    ));
+                    // Score Text
+                    parent.spawn((
+                        Text::new("0"),
+                        TextLayout::new_with_justify(JustifyText::Center),
+                        get_text_font(asset_server),
+                        get_text_color(),
                         ScoreText {},
                     ));
                 });
             // RHS
             parent
-                .spawn(NodeBundle {
-                    style: Styles::rhs(),
-                    background_color: BACKGROUND_COLOR.into(),
-                    ..default()
-                })
+                .spawn((Styles::rhs(), BackgroundColor(BACKGROUND_COLOR)))
                 .with_children(|parent| {
                     // Enemy Text
                     parent.spawn((
-                        TextBundle {
-                            style: Style::DEFAULT,
-                            text: Text {
-                                sections: vec![TextSection::new(
-                                    "0",
-                                    get_text_style(asset_server),
-                                )],
-                                justify: JustifyText::Center,
-                                ..default()
-                            },
-                            ..default()
-                        },
+                        Text::new("0"),
+                        TextLayout::new_with_justify(JustifyText::Center),
+                        get_text_font(asset_server),
+                        get_text_color(),
+                        ScoreText {},
                         EnemyText {},
                     ));
                     // Enemy Image
-                    parent.spawn(ImageBundle {
-                        style: Styles::image(),
-                        image: asset_server
-                            .load("ball-game/sprites/ball_red_large.png")
-                            .into(),
-                        ..default()
-                    });
+                    parent.spawn((
+                        Styles::image(),
+                        ImageNode {
+                            image: asset_server.load("ball-game/sprites/ball_red_large.png"),
+                            ..default()
+                        },
+                    ));
                 });
         })
         .id();

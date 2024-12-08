@@ -21,11 +21,8 @@ pub fn spawn_player(
     let window = window_query.get_single().unwrap();
 
     commands.spawn((
-        SpriteBundle {
-            transform: Transform::from_xyz(window.width() / 2.0, window.height() / 2.0, 0.0),
-            texture: asset_server.load("ball-game/sprites/ball_blue_large.png"),
-            ..default()
-        },
+        Sprite::from_image(asset_server.load("ball-game/sprites/ball_blue_large.png")),
+        Transform::from_xyz(window.width() / 2.0, window.height() / 2.0, 0.0),
         Player {},
     ));
 }
@@ -61,7 +58,7 @@ pub fn player_movement(
             direction = direction.normalize();
         }
 
-        transform.translation += direction * PLAYER_SPEED * time.delta_seconds();
+        transform.translation += direction * PLAYER_SPEED * time.delta_secs();
     }
 }
 
@@ -115,11 +112,7 @@ pub fn enemy_hit_player(
             if distance < player_radius + enemy_radius {
                 println!("Enemy hit player! Game Over!");
                 let sound_effect = asset_server.load("ball-game/audio/explosionCrunch_000.ogg");
-                // audio.play(sound_effect);
-                commands.spawn(AudioBundle {
-                    source: sound_effect,
-                    ..default()
-                });
+                commands.spawn(AudioPlayer::new(sound_effect));
 
                 commands.entity(player_entity).despawn();
                 game_over_event_writer.send(GameOver { score: score.value });
@@ -146,11 +139,7 @@ pub fn player_hit_star(
                 println!("Player hit star!");
                 score.value += 1;
                 let sound_effect = asset_server.load("ball-game/audio/laserLarge_000.ogg");
-                // audio.play(sound_effect);
-                commands.spawn(AudioBundle {
-                    source: sound_effect,
-                    ..default()
-                });
+                commands.spawn(AudioPlayer::new(sound_effect));
 
                 commands.entity(star_entity).despawn();
             }
